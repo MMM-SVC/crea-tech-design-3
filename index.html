@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crea Tech Design | Création de sites web pour PME à Paris &amp; Île-de-France</title>
+  <meta name="description" content="Crea Tech Design crée des sites vitrines, sites marchands et refontes pour les PME. Design sur mesure, hébergement, maintenance et cybersécurité inclus.">
+  <meta name="theme-color" content="#0B0B14">
+  <link rel="canonical" href="https://www.createchdesign.fr/">
+  <!-- Open Graph (aperçu lors d'un partage sur les réseaux) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Crea Tech Design">
+  <meta property="og:title" content="Crea Tech Design | Création de sites web pour PME à Paris &amp; Île-de-France">
+  <meta property="og:description" content="Crea Tech Design crée des sites vitrines, sites marchands et refontes pour les PME. Design sur mesure, hébergement, maintenance et cybersécurité inclus.">
+  <meta property="og:url" content="https://www.createchdesign.fr/">
+  <meta property="og:image" content="https://www.createchdesign.fr/images/og-image.jpg">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Crea Tech Design",
+  "description": "Création de sites vitrines, sites marchands et refonte de sites pour les PME, avec hébergement, maintenance et sécurité.",
+  "url": "https://www.createchdesign.fr",
+  "logo": "https://www.createchdesign.fr/images/logo.png",
+  "image": "https://www.createchdesign.fr/images/og-image.jpg",
+  "email": "createch.design75@outlook.fr",
+  "areaServed": [
+    "Paris",
+    "Île-de-France",
+    "France"
+  ],
+  "priceRange": "1900 € - 4390 €"
+}
+  </script>
+</head><body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- Écran de chargement : logo qui s'assemble (< 1 s). Animé en CSS, il disparaît seul et ne bloque jamais le contenu. -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__logo">
+      <img class="loader__piece--a" src="images/logo-mark-light.png" alt="" width="632" height="347">
+      <img class="loader__piece--b" src="images/logo-mark-light.png" alt="" width="632" height="347">
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Crea Tech Design — accueil">
+        <img src="images/logo-mark-light.png" alt="" width="52" height="29">
+        <span class="brand__name">CREA <span>TECH</span> DESIGN</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" aria-current="page">Accueil</a></li>
+          <li><a class="nav__link" href="services.html">Services &amp; tarifs</a></li>
+          <li><a class="nav__link" href="a-propos.html">Qui sommes-nous ?</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+        <a class="btn btn--primary" href="contact.html">Demander un devis</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== HERO : scène 3D en couches (étoiles, halos, particules, vitrine, badges) ===== -->
+    <section class="hero" data-parallax data-progress="exit">
+      <div class="hero__layer hero__stars" aria-hidden="true"></div>
+      <div class="hero__layer hero__halos" aria-hidden="true">
+        <span class="hero__halo hero__halo--1"></span>
+        <span class="hero__halo hero__halo--2"></span>
+        <span class="hero__halo hero__halo--3"></span>
+      </div>
+      <canvas class="hero__canvas" data-particles aria-hidden="true"></canvas>
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <div class="reveal">
+            <span class="eyebrow">Agence web · Paris &amp; Île-de-France</span>
+            <h1>Des sites web élégants et chaleureux pour faire grandir votre PME en toute <span class="text-gradient">sécurité</span></h1>
+            <p class="hero__lead">Sites vitrines, boutiques en ligne et refontes : nous créons votre présence sur internet, puis nous l'hébergeons, la maintenons et la protégeons.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="services.html">Voir nos offres</a>
+              <a class="btn btn--ghost" href="contact.html">Nous contacter</a>
+            </div>
+            <ul class="hero__trust">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Design sur mesure</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Hébergement &amp; maintenance inclus</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Données protégées</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-label="Exemples de sites réalisés" role="region">
+          <div class="hero__visual-in reveal">
+            <!-- VIDÉO OPTIONNELLE (voir README, rubrique « Vidéo dans le hero »)
+                 1. Placez votre fichier dans videos/hero.mp4
+                 2. Décommentez la balise <video> ci-dessous
+                 3. Supprimez le bloc <div class="showcase"> qui suit, ainsi que les sélecteurs (showcase-tabs)
+            <video class="hero__video" autoplay muted loop playsinline preload="metadata">
+              <source src="videos/hero.mp4" type="video/mp4">
+            </video>
+            -->
+            <div class="hero__stage">
+              <!-- SITES D'EXEMPLE (vitrine) : l'ordre doit correspondre aux <template data-site> en bas de page -->
+              <div class="showcase" data-showcase>
+                <div class="showcase__scene">
+                  <div class="showcase__item" data-site="bistrot" data-slot="0">
+                    <button class="showcase__hit" type="button" aria-label="Ouvrir l'aperçu détaillé du site Le Bistrot Parisien"></button>
+                    <span class="showcase__open" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Explorer le site</span>
+                    <div class="smk smk--bistrot" aria-hidden="true">
+                      <div class="smk__bar"><i></i><i></i><i></i><span class="smk__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>lebistrotparisien.fr</span></div>
+                      <div class="smk__nav">
+                        <span class="smk__logo">Le Bistrot <em>Parisien</em></span>
+                        <span class="smk__links"><span>La carte</span><span>Le chef</span><span>Galerie</span><span>Contact</span></span>
+                        <span class="smk__btn">Réserver</span>
+                      </div>
+                      <div class="smk__hero">
+                        <img class="smk__photo" src="images/exemples/bistrot/salle.jpg" width="1600" height="1066" alt="Salle chaleureuse d'un bistrot parisien avec miroirs ronds et tables dressées">
+                        <div class="smk__hero-text">
+                          <small>Bistronomie · Paris 11e</small>
+                          <strong>Une cuisine de saison au cœur de Paris</strong>
+                          <span class="smk__actions"><span class="smk__btn">Réserver une table</span><span class="smk__btn smk__btn--ghost">Voir la carte</span></span>
+                        </div>
+                      </div>
+                      <div class="smk__cards">
+                        <div class="smk__card"><img class="smk__img" src="images/exemples/bistrot/entree.jpg" width="1200" height="800" loading="lazy" alt="Entrée dressée sur une assiette blanche"><b>Croustillants de saison</b><span>14 €</span></div>
+                        <div class="smk__card"><img class="smk__img" src="images/exemples/bistrot/plat.jpg" width="1200" height="800" loading="lazy" alt="Filet de poisson, beurre blanc aux herbes"><b>Cabillaud, beurre blanc</b><span>26 €</span></div>
+                        <div class="smk__card"><img class="smk__img" src="images/exemples/bistrot/dessert.jpg" width="1200" height="800" loading="lazy" alt="Dessert au chocolat et fruits rouges"><b>Entremets chocolat</b><span>11 €</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="showcase__item" data-site="bois" data-slot="1">
+                    <button class="showcase__hit" type="button" tabindex="-1" aria-label="Afficher le site Atelier Bois &amp; Co"></button>
+                    <span class="showcase__open" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Explorer le site</span>
+                    <div class="smk smk--bois" aria-hidden="true">
+                      <div class="smk__bar"><i></i><i></i><i></i><span class="smk__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>atelier-boisandco.fr</span></div>
+                      <div class="smk__nav">
+                        <span class="smk__logo"><span class="smk__leaf"></span>Atelier Bois <em>&amp;</em> Co</span>
+                        <span class="smk__links"><span>Savoir-faire</span><span>Réalisations</span><span>Avis</span></span>
+                        <span class="smk__btn">Devis gratuit</span>
+                      </div>
+                      <div class="smk__hero">
+                        <img class="smk__photo" src="images/exemples/atelier/atelier.jpg" width="1600" height="1067" loading="lazy" alt="Menuisier travaillant une planche de bois dans son atelier">
+                        <div class="smk__hero-text">
+                          <small>Menuisier ébéniste · Yvelines</small>
+                          <strong>Menuiserie sur mesure depuis 1998</strong>
+                          <span class="smk__actions"><span class="smk__btn">Demander un devis</span><span class="smk__btn smk__btn--ghost">Nos réalisations</span></span>
+                        </div>
+                      </div>
+                      <div class="smk__cards">
+                        <div class="smk__card"><img class="smk__img" src="images/exemples/atelier/cuisine-1.jpg" width="1200" height="800" loading="lazy" alt="Cuisine aux façades en bois clair"><b>Cuisines</b><span>Chêne &amp; noyer</span></div>
+                        <div class="smk__card"><img class="smk__img" src="images/exemples/atelier/escalier-1.jpg" width="1200" height="801" loading="lazy" alt="Escalier en bois avec rampe blanche"><b>Escaliers</b><span>Sur mesure</span></div>
+                        <div class="smk__card"><img class="smk__img" src="images/exemples/atelier/meuble-1.jpg" width="1200" height="801" loading="lazy" alt="Table ronde en bois massif"><b>Meubles</b><span>Bois massif</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="showcase__item" data-site="lumiere" data-slot="2">
+                    <button class="showcase__hit" type="button" tabindex="-1" aria-label="Afficher le site Maison Lumière"></button>
+                    <span class="showcase__open" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Explorer le site</span>
+                    <div class="smk smk--lumiere" aria-hidden="true">
+                      <div class="smk__bar"><i></i><i></i><i></i><span class="smk__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>maison-lumiere.fr</span></div>
+                      <div class="smk__promo">Livraison offerte dès 60 €</div>
+                      <div class="smk__nav">
+                        <span class="smk__logo">MAISON <em>LUMIÈRE</em></span>
+                        <span class="smk__links"><span>Nouveautés</span><span>Luminaires</span><span>Déco</span></span>
+                        <span class="smk__icons">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+                          <span class="smk__cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><b>2</b></span>
+                        </span>
+                      </div>
+                      <div class="smk__hero">
+                        <img class="smk__photo" src="images/exemples/boutique/hero.jpg" width="1600" height="1067" loading="lazy" alt="Miroir soleil doré et objets de décoration sur une console">
+                        <div class="smk__hero-text">
+                          <small>Collection Automne</small>
+                          <strong>La douceur des soirs d'automne</strong>
+                          <span class="smk__actions"><span class="smk__btn">Découvrir</span></span>
+                        </div>
+                      </div>
+                      <div class="smk__cards smk__cards--4">
+                        <div class="smk__card"><img class="smk__img" src="images/exemples/boutique/cat-luminaires.jpg" width="800" height="600" loading="lazy" alt="Suspension noire"><b>Luminaires</b></div>
+                        <div class="smk__card"><img class="smk__img" src="images/exemples/boutique/cat-vases.jpg" width="800" height="533" loading="lazy" alt="Vases en céramique"><b>Vases</b></div>
+                        <div class="smk__card"><img class="smk__img" src="images/exemples/boutique/cat-textile.jpg" width="800" height="533" loading="lazy" alt="Coussins sur un canapé blanc"><b>Textile</b></div>
+                        <div class="smk__card"><img class="smk__img" src="images/exemples/boutique/cat-bougies.jpg" width="800" height="800" loading="lazy" alt="Bougie allumée près d'une tasse"><b>Bougies</b></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="hero__badges" aria-hidden="true">
+                <div class="float-badge float-badge--1">
+                  <span class="float-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+                  <div><strong>Site sécurisé</strong><span>HTTPS &amp; données protégées</span></div>
+                </div>
+                <div class="float-badge float-badge--2">
+                  <span class="float-badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></span>
+                  <div><strong>Rapide</strong><span>Optimisé mobile</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="showcase-tabs" role="group" aria-label="Choisir le site d'exemple affiché">
+              <button class="showcase-tab" type="button" data-site="bistrot" aria-pressed="true"><span class="showcase-tab__swatch showcase-tab__swatch--bistrot" aria-hidden="true"></span>Le Bistrot Parisien</button>
+              <button class="showcase-tab" type="button" data-site="bois" aria-pressed="false"><span class="showcase-tab__swatch showcase-tab__swatch--bois" aria-hidden="true"></span>Atelier Bois &amp; Co</button>
+              <button class="showcase-tab" type="button" data-site="lumiere" aria-pressed="false"><span class="showcase-tab__swatch showcase-tab__swatch--lumiere" aria-hidden="true"></span>Maison Lumière</button>
+            </div>
+            <p class="showcase-hint">Cliquez sur un site pour l'explorer<span class="showcase-hint__desk"> · flèches ← → pour changer</span><span class="showcase-hint__touch"> · glissez pour changer</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BANDEAU ===== -->
+    <div class="ribbon">
+      <p>Sites web <span aria-hidden="true">|</span> E-commerce <span aria-hidden="true">|</span> Refonte</p>
+    </div>
+
+    <!-- ===== VIDÉO DE PRÉSENTATION =====
+         Pour changer de vidéo : remplacez videos/presentation.mp4 (et images/video-poster.jpg pour l'aperçu). -->
+    <section class="section video-section" id="video" data-scroll3d>
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">En vidéo</span>
+          <h2>Découvrez <span class="text-gradient">Crea Tech Design</span> en 10 secondes</h2>
+          <p>Création de sites web, e-commerce, refonte : notre savoir-faire en un coup d'œil.</p>
+        </div>
+
+        <div class="video-frame reveal" data-video>
+          <div class="video-frame__inner">
+            <video class="video-frame__media" preload="metadata" playsinline poster="images/video-poster.jpg" width="1280" height="720" aria-label="Vidéo de présentation de Crea Tech Design">
+              <source src="videos/presentation.mp4" type="video/mp4">
+              Votre navigateur ne peut pas lire cette vidéo. <a href="videos/presentation.mp4">Téléchargez-la ici</a>.
+            </video>
+            <button class="video-frame__play" type="button" aria-label="Lire la vidéo de présentation">
+              <span class="video-frame__play-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l11.1-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z"/></svg>
+              </span>
+              <span class="video-frame__play-label">Lancer la vidéo <small>0:10</small></span>
+            </button>
+          </div>
+        </div>
+
+        <ul class="video-tags reveal" aria-label="Thèmes de la vidéo">
+          <li>Sites web</li>
+          <li>E-commerce</li>
+          <li>Refonte</li>
+          <li>Design &amp; cybersécurité</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== CE QUE NOUS FAISONS ===== -->
+    <section class="section" data-scroll3d>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Ce que nous faisons</span>
+          <h2>Votre <span class="text-gradient">visibilité en ligne</span>, de la création au suivi</h2>
+          <p>Nous accompagnons les PME à chaque étape : nous concevons votre site, puis nous continuons à en prendre soin.</p>
+        </div>
+        <div class="grid grid-3 grid--depth">
+          <article class="card reveal" data-tilt>
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+            <h3>Site vitrine</h3>
+            <p>Un site élégant et sur mesure pour présenter votre activité et convaincre vos clients.</p>
+          </article>
+          <article class="card reveal" data-tilt>
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+            <h3>Site marchand</h3>
+            <p>Une boutique en ligne performante, avec paiement sécurisé et gestion des commandes.</p>
+          </article>
+          <article class="card reveal" data-tilt>
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg></div>
+            <h3>Refonte de site</h3>
+            <p>Votre site actuel est daté ? Nous le modernisons sans perdre ce qui fonctionne.</p>
+          </article>
+          <article class="card reveal" data-tilt>
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></svg></div>
+            <h3>Hébergement</h3>
+            <p>Un hébergement fiable et sécurisé, géré par nos soins. Vous n'avez rien à faire.</p>
+          </article>
+          <article class="card reveal" data-tilt>
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <h3>Maintenance</h3>
+            <p>Mises à jour, sauvegardes et surveillance : votre site reste rapide et protégé.</p>
+          </article>
+          <article class="card reveal" data-tilt>
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/></svg></div>
+            <h3>Améliorations</h3>
+            <p>Nouvelles pages, nouvelles fonctionnalités : votre site évolue avec votre entreprise.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXEMPLES DE RÉALISATIONS ===== -->
+    <section class="section section--alt" id="realisations" data-scroll3d>
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Exemples de réalisations</span>
+          <h2>Un site pensé pour <span class="text-gradient">chaque métier</span></h2>
+          <p>Restaurant, artisan ou boutique en ligne : chaque projet a son identité, ses couleurs et ses objectifs.</p>
+          <span class="sample-note">Projets d'exemple</span>
+        </div>
+        <div class="grid grid-3 work-grid">
+          <article class="work-card reveal" data-tilt>
+            <div class="work-card__preview">
+              <img class="work-card__img" src="images/exemples/bistrot/salle.jpg" width="1600" height="1066" loading="lazy" alt="Salle du restaurant Le Bistrot Parisien : miroirs ronds, banquettes et tables dressées">
+              <span class="work-card__brand work-card__brand--bistrot" aria-hidden="true">Le Bistrot <em>Parisien</em></span>
+              <span class="work-card__url" aria-hidden="true">lebistrotparisien.fr</span>
+            </div>
+            <div class="work-card__body">
+              <span class="work-card__sector">Restaurant · Paris 11e</span>
+              <h3>Le Bistrot Parisien</h3>
+              <p>Un site chaleureux qui met en appétit : la carte de saison, le chef, l'ambiance du lieu et la réservation en un clic.</p>
+              <ul class="work-card__features" aria-label="Points forts">
+                <li>Réservation en ligne</li>
+                <li>Carte &amp; galerie photo</li>
+                <li>Avis clients</li>
+              </ul>
+              <p class="work-card__offer"><span>Offre</span> Site vitrine Premium</p>
+              <button class="work-card__open" type="button" data-site="bistrot">Voir l'aperçu<span class="visually-hidden"> du site Le Bistrot Parisien</span></button>
+            </div>
+          </article>
+          <article class="work-card reveal" data-tilt>
+            <div class="work-card__preview">
+              <img class="work-card__img" src="images/exemples/atelier/atelier.jpg" width="1600" height="1067" loading="lazy" alt="Menuisier de l'Atelier Bois &amp; Co travaillant une planche de bois à l'établi">
+              <span class="work-card__brand work-card__brand--bois" aria-hidden="true"><span class="work-card__leaf"></span>Atelier Bois &amp; Co</span>
+              <span class="work-card__url" aria-hidden="true">atelier-boisandco.fr</span>
+            </div>
+            <div class="work-card__body">
+              <span class="work-card__sector">Artisan menuisier · Yvelines</span>
+              <h3>Atelier Bois &amp; Co</h3>
+              <p>Des réalisations mises en valeur comme dans un catalogue, et des demandes de devis qui arrivent directement.</p>
+              <ul class="work-card__features" aria-label="Points forts">
+                <li>Galerie filtrable</li>
+                <li>Demande de devis</li>
+                <li>Témoignages clients</li>
+              </ul>
+              <p class="work-card__offer"><span>Offre</span> Site vitrine Classique</p>
+              <button class="work-card__open" type="button" data-site="bois">Voir l'aperçu<span class="visually-hidden"> du site Atelier Bois &amp; Co</span></button>
+            </div>
+          </article>
+          <article class="work-card reveal" data-tilt>
+            <div class="work-card__preview">
+              <img class="work-card__img" src="images/exemples/boutique/hero.jpg" width="1600" height="1067" loading="lazy" alt="Miroir soleil doré et objets de décoration de la boutique Maison Lumière">
+              <span class="work-card__brand work-card__brand--lumiere" aria-hidden="true">MAISON <em>LUMIÈRE</em></span>
+              <span class="work-card__url" aria-hidden="true">maison-lumiere.fr</span>
+            </div>
+            <div class="work-card__body">
+              <span class="work-card__sector">Boutique de décoration en ligne</span>
+              <h3>Maison Lumière</h3>
+              <p>Une boutique en ligne élégante : catégories, fiches produits, panier et commande en quelques clics.</p>
+              <ul class="work-card__features" aria-label="Points forts">
+                <li>Panier &amp; promotions</li>
+                <li>Paiement sécurisé</li>
+                <li>Newsletter</li>
+              </ul>
+              <p class="work-card__offer"><span>Offre</span> Site marchand</p>
+              <button class="work-card__open" type="button" data-site="lumiere">Voir l'aperçu<span class="visually-hidden"> du site Maison Lumière</span></button>
+            </div>
+          </article>
+        </div>
+        <p class="work-note reveal">Ces sites sont des projets d'exemple, conçus pour illustrer notre savoir-faire. Le vôtre sera unique.</p>
+      </div>
+    </section>
+
+    <!-- ===== DOUBLE CASQUETTE : les deux cartes fusionnent au scroll ===== -->
+    <section class="section section--dark">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Notre atout</span>
+          <h2>La double casquette : <span class="text-gradient">Design × Cybersécurité</span></h2>
+          <p>Deux expertises rarement réunies dans une même équipe, au service de votre site.</p>
+        </div>
+        <div class="duo-wrap" data-progress="enter">
+          <div class="duo">
+            <div class="duo__card">
+              <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13.5" cy="6.5" r="1"/><circle cx="17.5" cy="10.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><circle cx="6.5" cy="12.5" r="1"/><path d="M12 2a10 10 0 0 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.3A5.6 5.6 0 0 0 22 9.8C22 5.5 17.5 2 12 2z"/></svg></div>
+              <h3>Design web</h3>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Un site unique, à l'image de votre entreprise</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Une navigation claire qui transforme vos visiteurs en clients</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Un affichage parfait sur mobile, tablette et ordinateur</span></li>
+              </ul>
+            </div>
+            <div class="duo__x" aria-hidden="true">×</div>
+            <div class="duo__card">
+              <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+              <h3>Cybersécurité</h3>
+              <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Un site protégé contre les attaques courantes</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Les données de vos clients traitées en toute sécurité</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Un hébergement fiable, surveillé et sauvegardé</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="duo-result" data-at="0.97">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            <p><strong>Résultat :</strong> tous nos sites sont garantis et protègent les données de vos clients. Vous vous concentrez sur votre métier, nous nous occupons du reste.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== APERÇU DES OFFRES ===== -->
+    <section class="section" data-scroll3d>
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">Nos offres</span>
+          <h2>Des tarifs <span class="text-gradient">clairs</span>, sans surprise</h2>
+          <p>Hébergement et maintenance inclus dans chaque offre. Prix hors taxes, payables à la livraison.</p>
+        </div>
+        <div class="pricing pricing-mini pricing--fan">
+          <article class="price-card reveal" data-tilt>
+            <h3>Refonte de site</h3>
+            <p class="price-card__desc">Donnez un coup de neuf à votre site existant.</p>
+            <div class="price">
+              <!-- PRIX --><span class="price__amount" data-count>1 900 €</span><!-- /PRIX --> <span class="price__note">HT</span>
+            </div>
+            <a class="link-arrow" href="services.html#refonte">Voir le détail<span class="visually-hidden"> de l'offre Refonte de site</span></a>
+          </article>
+          <article class="price-card reveal" data-tilt>
+            <h3>Site vitrine Classique</h3>
+            <p class="price-card__desc">Votre site professionnel créé sur mesure.</p>
+            <div class="price">
+              <!-- PRIX --><span class="price__amount" data-count>2 480 €</span><!-- /PRIX --> <span class="price__note">HT</span>
+            </div>
+            <a class="link-arrow" href="services.html#vitrine">Voir le détail<span class="visually-hidden"> de l'offre Site vitrine Classique</span></a>
+          </article>
+          <article class="price-card price-card--featured is-active reveal" data-tilt>
+            <span class="price-card__badge">Le plus populaire</span>
+            <h3>Site vitrine Premium</h3>
+            <p class="price-card__desc">Le Classique, avec plus de liberté au quotidien.</p>
+            <div class="price">
+              <!-- PRIX --><span class="price__amount" data-count>2 890 €</span><!-- /PRIX --> <span class="price__note">HT</span>
+            </div>
+            <a class="link-arrow" href="services.html#premium">Voir le détail<span class="visually-hidden"> de l'offre Site vitrine Premium</span></a>
+          </article>
+          <article class="price-card reveal" data-tilt>
+            <h3>Site marchand</h3>
+            <p class="price-card__desc">Vendez vos produits en ligne, en toute sécurité.</p>
+            <div class="price">
+              <!-- PRIX --><span class="price__amount" data-count>4 390 €</span><!-- /PRIX --> <span class="price__note">HT</span>
+            </div>
+            <a class="link-arrow" href="services.html#ecommerce">Voir le détail<span class="visually-hidden"> de l'offre Site marchand</span></a>
+          </article>
+        </div>
+        <p class="prices-note reveal">Option abonnement mensuel à <!-- PRIX -->45 € HT/mois<!-- /PRIX --> : modifications illimitées. <a href="services.html#abonnement">En savoir plus</a></p>
+      </div>
+    </section>
+
+    <!-- ===== COMMENT ÇA MARCHE : la ligne lumineuse se remplit au scroll ===== -->
+    <section class="section section--alt" data-scroll3d>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Comment ça marche</span>
+          <h2>Un accompagnement simple, <span class="text-gradient">en 5 étapes</span></h2>
+        </div>
+        <ol class="steps" data-progress="line">
+          <li><h3>Échange</h3><p>Nous écoutons vos besoins, vos objectifs et votre cible.</p></li>
+          <li><h3>Maquette</h3><p>Nous concevons le design de votre site et l'ajustons avec vous.</p></li>
+          <li><h3>Développement</h3><p>Nous construisons un site rapide, responsive et sécurisé.</p></li>
+          <li><h3>Mise en ligne</h3><p>Nous gérons l'hébergement et la publication de A à Z.</p></li>
+          <li><h3>Suivi</h3><p>Maintenance, sécurité et améliorations : on reste à vos côtés.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" data-scroll3d>
+      <div class="container">
+        <div class="cta reveal" data-parallax>
+          <div class="cta__inner">
+            <span class="eyebrow">Parlons de votre projet</span>
+            <h2>Prêt à donner de la <span class="text-gradient">visibilité</span> à votre entreprise ?</h2>
+            <p>Parlez-nous de votre projet : nous vous répondons sous 24 à 48 h avec une proposition claire et sans engagement.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary btn--light" href="contact.html">Demander un devis gratuit</a>
+              <a class="btn btn--ghost" href="services.html">Voir nos offres</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="Crea Tech Design — accueil">
+            <img src="images/logo-mark-light.png" alt="" width="52" height="29">
+            <span class="brand__name">CREA <span>TECH</span> DESIGN</span>
+          </a>
+          <p>Création de sites vitrines, sites marchands et refontes pour les PME. Le design et la cybersécurité réunis pour votre visibilité en ligne.</p>
+        </div>
+        <div>
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services &amp; tarifs</a></li>
+            <li><a href="a-propos.html">Qui sommes-nous ?</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Nos offres</h3>
+          <ul>
+            <li><a href="services.html#offres">Refonte de site</a></li>
+            <li><a href="services.html#offres">Site vitrine</a></li>
+            <li><a href="services.html#offres">Site marchand</a></li>
+            <li><a href="services.html#abonnement">Abonnement mensuel</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:createch.design75@outlook.fr">createch.design75@outlook.fr</a></li>
+            <li>Paris &amp; Île-de-France</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <!-- Numéros FICTIFS (maquette interne) : à remplacer par les vrais avant toute publication -->
+        <p>© <span data-year>2026</span> Crea Tech Design — SARL au capital de 10 000 € — SIRET 924 581 376 00018</p>
+        <p><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FENÊTRE D'APERÇU DES SITES D'EXEMPLE (js/showcase.js) ===== -->
+  <div class="pv" id="pv" hidden>
+    <div class="pv__backdrop" data-pv-close></div>
+    <div class="pv__dialog" role="dialog" aria-modal="true" aria-labelledby="pv-title" aria-describedby="pv-desc" tabindex="-1">
+      <div class="pv__head">
+        <div class="pv__info">
+          <span class="pv__sector" data-pv-sector>Restaurant</span>
+          <h2 class="pv__title" id="pv-title" data-pv-title>Le Bistrot Parisien</h2>
+          <p class="visually-hidden" id="pv-desc">Aperçu d'un site d'exemple. Faites défiler le site, changez de taille d'écran ou passez au site suivant. Échap pour fermer.</p>
+        </div>
+        <div class="pv__devices" role="group" aria-label="Taille d'écran de l'aperçu">
+          <button class="pv__device" type="button" data-device="desktop" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Ordinateur</span></button>
+          <button class="pv__device" type="button" data-device="tablet" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M12 18h.01"/></svg><span>Tablette</span></button>
+          <button class="pv__device" type="button" data-device="mobile" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M12 18h.01"/></svg><span>Mobile</span></button>
+        </div>
+        <div class="pv__nav">
+          <button class="pv__icon-btn" type="button" data-pv-prev aria-label="Site précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+          <span class="pv__count" data-pv-count aria-hidden="true">1 / 3</span>
+          <button class="pv__icon-btn" type="button" data-pv-next aria-label="Site suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+          <button class="pv__icon-btn pv__close" type="button" data-pv-close aria-label="Fermer l'aperçu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        </div>
+      </div>
+      <div class="pv__stage" data-device="desktop">
+        <div class="pv__frame">
+          <div class="pv__bar" aria-hidden="true"><i></i><i></i><i></i><span class="pv__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span data-pv-url>lebistrotparisien.fr</span></span></div>
+          <div class="pv__screen" tabindex="0" role="region" aria-label="Contenu du site d'exemple (faites défiler)"></div>
+        </div>
+      </div>
+      <div class="pv__foot">
+        <p class="pv__note">Projet d'exemple · <strong data-pv-offer>Offre Site vitrine Premium</strong></p>
+        <a class="btn btn--primary" href="contact.html" data-pv-cta>Je veux un site comme celui-ci</a>
+      </div>
+      <p class="visually-hidden" aria-live="polite" data-pv-live></p>
+    </div>
+  </div>
+
+  <!-- ===== SITES D'EXEMPLE DÉTAILLÉS (contenu de la fenêtre d'aperçu) =====
+       Pour modifier un site : changez le texte ci-dessous. data-offer = valeur présélectionnée
+       dans le formulaire de contact (refonte, vitrine, premium, ecommerce).
+       Photos : dossier images/exemples/ (voir README, rubrique « Sites d'exemple »). -->
+  <template data-site="bistrot" data-name="Le Bistrot Parisien" data-url="lebistrotparisien.fr" data-sector="Restaurant · Paris 11e" data-offer="premium" data-offer-label="Offre Site vitrine Premium">
+    <div class="site site--bistrot">
+      <header class="site__nav">
+        <span class="site__logo">Le Bistrot <em>Parisien</em></span>
+        <span class="site__links"><span>La carte</span><span>Le chef</span><span>Galerie</span><span>Contact</span></span>
+        <span class="site__btn site__nav-cta">Réserver une table</span>
+        <button class="site__burger" type="button" aria-expanded="false" aria-label="Ouvrir le menu du site" data-site-burger><span></span></button>
+        <nav class="site__menu" aria-label="Menu du site d'exemple"><span>La carte</span><span>Le chef</span><span>Galerie</span><span>Contact</span><span class="site__btn">Réserver une table</span></nav>
+      </header>
+
+      <section class="site__hero">
+        <img class="site__hero-img" src="images/exemples/bistrot/salle.jpg" width="1600" height="1066" alt="Salle du Bistrot Parisien : miroirs ronds, banquettes et tables dressées sous une lumière tamisée">
+        <div class="site__hero-in">
+          <span class="site__kicker">Bistronomie · Paris 11e</span>
+          <h3>Une cuisine de saison au cœur de Paris</h3>
+          <p>Des produits du marché travaillés chaque jour, une carte courte qui suit les saisons et une salle où l'on se sent comme chez soi.</p>
+          <div class="site__actions"><span class="site__btn">Réserver une table</span><span class="site__btn site__btn--ghost">Découvrir la carte</span></div>
+        </div>
+      </section>
+
+      <section class="site__section">
+        <div class="site__wrap site__split">
+          <img class="site__photo" src="images/exemples/bistrot/chef.jpg" width="1200" height="800" loading="lazy" alt="Le chef dresse les assiettes en cuisine">
+          <div>
+            <span class="site__kicker">Le chef</span>
+            <h4 class="site__title">Antoine Mercier</h4>
+            <blockquote class="site__quote">« Je cuisine ce que les producteurs m'apportent le matin. Une bonne assiette, c'est d'abord un bon produit, et beaucoup de respect pour lui. »</blockquote>
+            <p class="site__text">Formé dans les grandes maisons parisiennes, Antoine a ouvert le Bistrot en 2016 avec une idée simple : une cuisine généreuse, précise et abordable.</p>
+            <span class="site__signature">Antoine M.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="site__section site__section--soft">
+        <div class="site__wrap">
+          <div class="site__head">
+            <span class="site__kicker">Menu d'automne</span>
+            <h4 class="site__title">La carte</h4>
+            <p class="site__sub">Formule midi entrée + plat ou plat + dessert : 26 €</p>
+          </div>
+          <div class="site__carte">
+            <div class="site__course">
+              <img src="images/exemples/bistrot/entree.jpg" width="1200" height="800" loading="lazy" alt="Entrée : croustillants dorés et légumes de saison">
+              <h5>Entrées</h5>
+              <ul>
+                <li><span><b>Croustillants de saison</b><small>Carottes glacées, crème d'herbes</small></span><strong>14 €</strong></li>
+                <li><span><b>Œuf parfait</b><small>Champignons des bois, noisettes</small></span><strong>13 €</strong></li>
+                <li><span><b>Velouté de potimarron</b><small>Châtaignes, huile de noix</small></span><strong>11 €</strong></li>
+              </ul>
+            </div>
+            <div class="site__course">
+              <img src="images/exemples/bistrot/plat.jpg" width="1200" height="800" loading="lazy" alt="Plat : cabillaud nappé de beurre blanc aux herbes">
+              <h5>Plats</h5>
+              <ul>
+                <li><span><b>Cabillaud, beurre blanc</b><small>Poireaux fondants, câpres</small></span><strong>26 €</strong></li>
+                <li><span><b>Joue de bœuf confite</b><small>Purée au beurre demi-sel</small></span><strong>24 €</strong></li>
+                <li><span><b>Risotto aux cèpes</b><small>Parmesan affiné 24 mois</small></span><strong>22 €</strong></li>
+              </ul>
+            </div>
+            <div class="site__course">
+              <img src="images/exemples/bistrot/dessert.jpg" width="1200" height="800" loading="lazy" alt="Dessert : entremets au chocolat et fruits rouges">
+              <h5>Desserts</h5>
+              <ul>
+                <li><span><b>Entremets chocolat</b><small>Framboises, grué de cacao</small></span><strong>11 €</strong></li>
+                <li><span><b>Tarte fine aux pommes</b><small>Glace vanille de Madagascar</small></span><strong>10 €</strong></li>
+                <li><span><b>Fromages affinés</b><small>Sélection de notre crémier</small></span><strong>12 €</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="site__section">
+        <div class="site__wrap">
+          <div class="site__head">
+            <span class="site__kicker">Galerie</span>
+            <h4 class="site__title">Le lieu, la cuisine, la cave</h4>
+          </div>
+          <div class="site__mosaic">
+            <img src="images/exemples/bistrot/terrasse.jpg" width="1000" height="666" loading="lazy" alt="Terrasse fleurie du bistrot sur une rue parisienne">
+            <img src="images/exemples/bistrot/vins.jpg" width="1200" height="800" loading="lazy" alt="Bouteilles de vin et verres sur des étagères en bois">
+            <img src="images/exemples/bistrot/salle-2.jpg" width="1200" height="801" loading="lazy" alt="Chaises en bois et lumière chaude dans la salle">
+            <img src="images/exemples/bistrot/plat.jpg" width="1200" height="800" loading="lazy" alt="Assiette de poisson aux herbes">
+            <img src="images/exemples/bistrot/dessert.jpg" width="1200" height="800" loading="lazy" alt="Desserts dressés à l'assiette">
+          </div>
+        </div>
+      </section>
+
+      <section class="site__section site__section--soft">
+        <div class="site__wrap site__reviews-wrap">
+          <div class="site__rating">
+            <span class="site__kicker">Avis clients</span>
+            <strong>4,8<small>/5</small></strong>
+            <span class="site__stars" aria-label="Note de 4,8 sur 5">★★★★★</span>
+            <p>Basé sur 326 avis vérifiés</p>
+          </div>
+          <div class="site__reviews">
+            <figure class="site__review"><span class="site__stars" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>« Une cuisine fine et généreuse, un accueil adorable. Le cabillaud est une merveille. »</blockquote><figcaption><b>Claire M.</b> · il y a 2 semaines</figcaption></figure>
+            <figure class="site__review"><span class="site__stars" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>« Réservation en ligne en deux clics, table parfaite en terrasse. On reviendra ! »</blockquote><figcaption><b>Julien R.</b> · il y a 1 mois</figcaption></figure>
+            <figure class="site__review"><span class="site__stars" aria-label="4 étoiles sur 5">★★★★☆</span><blockquote>« Une carte des vins pleine de découvertes et de très bons conseils. »</blockquote><figcaption><b>Sofia B.</b> · il y a 1 mois</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="site__section">
+        <div class="site__wrap site__infos">
+          <div>
+            <span class="site__kicker">Infos pratiques</span>
+            <h4 class="site__title">Horaires &amp; accès</h4>
+            <dl class="site__hours">
+              <div><dt>Lundi</dt><dd>Fermé</dd></div>
+              <div><dt>Mardi – Vendredi</dt><dd>12 h – 14 h 30 · 19 h – 22 h 30</dd></div>
+              <div><dt>Samedi</dt><dd>19 h – 23 h</dd></div>
+              <div><dt>Dimanche</dt><dd>12 h – 15 h</dd></div>
+            </dl>
+            <p class="site__address"><b>12 rue des Lilas, 75011 Paris</b>Métro Voltaire · 01 23 45 67 89</p>
+            <span class="site__btn">Réserver une table</span>
+          </div>
+          <div class="site__map" role="img" aria-label="Plan stylisé du quartier avec l'emplacement du restaurant">
+            <span class="site__map-pin"><b>Le Bistrot Parisien</b></span>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site__footer">
+        <div class="site__wrap site__footer-in">
+          <div>
+            <span class="site__logo">Le Bistrot <em>Parisien</em></span>
+            <p>Bistronomie de saison · 12 rue des Lilas, Paris 11e</p>
+          </div>
+          <ul class="site__social" aria-label="Réseaux sociaux du restaurant (exemple)">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg><span class="visually-hidden">Instagram</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="7" cy="13" r="3.5"/><circle cx="17" cy="13" r="3.5"/><path d="M3 9h18M12 9l-1.5 2.5M12 9l1.5 2.5"/></svg><span class="visually-hidden">TripAdvisor</span></li>
+          </ul>
+        </div>
+        <div class="site__wrap site__footer-bottom"><span>© Le Bistrot Parisien</span><span>Site d'exemple réalisé par Crea Tech Design</span></div>
+      </footer>
+    </div>
+  </template>
+
+  <template data-site="bois" data-name="Atelier Bois &amp; Co" data-url="atelier-boisandco.fr" data-sector="Artisan menuisier · Yvelines" data-offer="vitrine" data-offer-label="Offre Site vitrine Classique">
+    <div class="site site--bois">
+      <header class="site__nav">
+        <span class="site__logo"><span class="site__leaf"></span>Atelier Bois <em>&amp;</em> Co</span>
+        <span class="site__links"><span>Savoir-faire</span><span>Réalisations</span><span>Avis</span><span>Contact</span></span>
+        <span class="site__btn site__nav-cta">Demander un devis</span>
+        <button class="site__burger" type="button" aria-expanded="false" aria-label="Ouvrir le menu du site" data-site-burger><span></span></button>
+        <nav class="site__menu" aria-label="Menu du site d'exemple"><span>Savoir-faire</span><span>Réalisations</span><span>Avis</span><span>Contact</span><span class="site__btn">Demander un devis</span></nav>
+      </header>
+
+      <section class="site__hero">
+        <img class="site__hero-img" src="images/exemples/atelier/atelier.jpg" width="1600" height="1067" alt="Artisan menuisier travaillant une planche à l'établi, dans un atelier lumineux">
+        <div class="site__hero-in">
+          <span class="site__kicker">Menuisier ébéniste · Yvelines</span>
+          <h3>Menuiserie sur mesure depuis 1998</h3>
+          <p>Cuisines, escaliers, bibliothèques et meubles en bois massif : chaque pièce est dessinée avec vous, puis fabriquée à la main dans notre atelier.</p>
+          <div class="site__actions"><span class="site__btn">Demander un devis gratuit</span><span class="site__btn site__btn--ghost">Voir nos réalisations</span></div>
+          <div class="site__badges"><span>Bois français PEFC</span><span>Garantie 10 ans</span><span>Artisan RGE</span></div>
+        </div>
+      </section>
+
+      <section class="site__section">
+        <div class="site__wrap">
+          <div class="site__split">
+            <div>
+              <span class="site__kicker">Notre savoir-faire</span>
+              <h4 class="site__title">Un seul interlocuteur, du croquis à la pose</h4>
+              <p class="site__text">Depuis plus de 25 ans, nous travaillons le chêne, le noyer et le frêne issus de forêts françaises. Pas de sous-traitance : tout est conçu et fabriqué dans notre atelier de 400 m², à Rambouillet.</p>
+            </div>
+            <img class="site__photo" src="images/exemples/atelier/mains.jpg" width="1200" height="800" loading="lazy" alt="Mains d'artisan rabotant une pièce de bois sur l'établi">
+          </div>
+          <ol class="site__steps">
+            <li>
+              <span class="site__step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span>
+              <b>Écoute</b>
+              <p>Visite chez vous, prise de mesures et échange sur vos envies, vos usages et votre budget.</p>
+            </li>
+            <li>
+              <span class="site__step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              <b>Conception</b>
+              <p>Plans détaillés et rendu 3D : vous validez chaque essence, chaque finition, chaque détail.</p>
+            </li>
+            <li>
+              <span class="site__step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.5 8.5a2.1 2.1 0 0 1-3-3L12 9"/><path d="M17.6 15 22 10.6 13.4 2 9 6.4z"/></svg></span>
+              <b>Fabrication</b>
+              <p>Fabrication à la main dans notre atelier, puis pose soignée par la même équipe.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="site__section site__section--soft">
+        <div class="site__wrap">
+          <div class="site__head">
+            <span class="site__kicker">Portfolio</span>
+            <h4 class="site__title">Nos réalisations</h4>
+          </div>
+          <div class="site__filters" role="group" aria-label="Filtrer les réalisations">
+            <button type="button" data-site-filter="all" aria-pressed="true">Tout</button>
+            <button type="button" data-site-filter="cuisines" aria-pressed="false">Cuisines</button>
+            <button type="button" data-site-filter="escaliers" aria-pressed="false">Escaliers</button>
+            <button type="button" data-site-filter="meubles" aria-pressed="false">Meubles</button>
+          </div>
+          <p class="visually-hidden" aria-live="polite" data-site-filter-status></p>
+          <div class="site__gallery">
+            <figure data-cat="cuisines"><img src="images/exemples/atelier/cuisine-1.jpg" width="1200" height="800" loading="lazy" alt="Cuisine aux façades en bois clair et plan de travail blanc"><figcaption><b>Cuisine en chêne clair</b><span>Versailles · Cuisines</span></figcaption></figure>
+            <figure data-cat="escaliers"><img src="images/exemples/atelier/escalier-1.jpg" width="1200" height="801" loading="lazy" alt="Escalier quart tournant en bois avec main courante blanche"><figcaption><b>Escalier quart tournant</b><span>Saint-Germain-en-Laye · Escaliers</span></figcaption></figure>
+            <figure data-cat="meubles"><img src="images/exemples/atelier/meuble-1.jpg" width="1200" height="801" loading="lazy" alt="Table ronde en bois massif dressée pour le repas"><figcaption><b>Table ronde en noyer</b><span>Rambouillet · Meubles</span></figcaption></figure>
+            <figure data-cat="cuisines"><img src="images/exemples/atelier/cuisine-2.jpg" width="1200" height="800" loading="lazy" alt="Cuisine en bois et façades noires avec îlot"><figcaption><b>Cuisine bois &amp; noir mat</b><span>Paris 16e · Cuisines</span></figcaption></figure>
+            <figure data-cat="escaliers"><img src="images/exemples/atelier/escalier-2.jpg" width="1200" height="800" loading="lazy" alt="Escalier droit en bois foncé entre deux murs blancs"><figcaption><b>Escalier droit en chêne</b><span>Le Chesnay · Escaliers</span></figcaption></figure>
+            <figure data-cat="meubles"><img src="images/exemples/atelier/meuble-2.jpg" width="1200" height="800" loading="lazy" alt="Grande table de salle à manger en bois massif dans une pièce lumineuse"><figcaption><b>Table de ferme 10 couverts</b><span>Montfort-l'Amaury · Meubles</span></figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="site__stats">
+        <div class="site__wrap">
+          <ul>
+            <li><strong data-site-count="28">28</strong><span>années d'expérience</span></li>
+            <li><strong data-site-count="850" data-site-prefix="+">+850</strong><span>projets réalisés</span></li>
+            <li><strong data-site-count="98" data-site-suffix=" %">98 %</strong><span>de clients satisfaits</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="site__section">
+        <div class="site__wrap">
+          <div class="site__head">
+            <span class="site__kicker">Témoignages</span>
+            <h4 class="site__title">Ils nous ont confié leur projet</h4>
+          </div>
+          <div class="site__reviews">
+            <figure class="site__review"><span class="site__stars" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>« Notre escalier est devenu la pièce maîtresse de la maison. Un travail d'orfèvre. »</blockquote><figcaption><b>Famille Laurent</b> · Escalier en chêne</figcaption></figure>
+            <figure class="site__review"><span class="site__stars" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>« Délais tenus, chantier propre et des conseils précieux sur le choix du bois. »</blockquote><figcaption><b>Marc D.</b> · Cuisine sur mesure</figcaption></figure>
+            <figure class="site__review"><span class="site__stars" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>« Une bibliothèque parfaitement pensée pour notre pièce mansardée. Merci ! »</blockquote><figcaption><b>Inès T.</b> · Bibliothèque</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="site__section site__section--tight">
+        <div class="site__wrap">
+          <div class="site__quote-box">
+            <div>
+              <span class="site__kicker">Devis gratuit sous 48 h</span>
+              <h4>Un projet en tête ? Parlons-en.</h4>
+              <p>Décrivez-nous votre projet : nous vous rappelons pour fixer une visite, sans engagement.</p>
+            </div>
+            <div class="site__form">
+              <span class="site__field">Nom et prénom</span>
+              <span class="site__field">Téléphone</span>
+              <span class="site__field">Type de projet : cuisine, escalier, meuble…</span>
+              <span class="site__btn">Recevoir mon devis</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site__footer">
+        <div class="site__wrap site__footer-in">
+          <div>
+            <span class="site__logo"><span class="site__leaf"></span>Atelier Bois <em>&amp;</em> Co</span>
+            <p>ZA des Bréviaires, 78120 Rambouillet · 01 23 45 67 89</p>
+          </div>
+          <p>Intervention : Yvelines, Hauts-de-Seine et Paris<br>Du lundi au vendredi, 8 h – 18 h</p>
+        </div>
+        <div class="site__wrap site__footer-bottom"><span>© Atelier Bois &amp; Co</span><span>Site d'exemple réalisé par Crea Tech Design</span></div>
+      </footer>
+    </div>
+  </template>
+
+  <template data-site="lumiere" data-name="Maison Lumière" data-url="maison-lumiere.fr" data-sector="Boutique de décoration en ligne" data-offer="ecommerce" data-offer-label="Offre Site marchand">
+    <div class="site site--lumiere">
+      <p class="site__promo">Livraison offerte dès 60 € d'achat · Retours gratuits sous 30 jours</p>
+      <header class="site__nav">
+        <button class="site__burger" type="button" aria-expanded="false" aria-label="Ouvrir le menu du site" data-site-burger><span></span></button>
+        <span class="site__logo">MAISON <em>LUMIÈRE</em></span>
+        <span class="site__links"><span>Nouveautés</span><span>Luminaires</span><span>Vases</span><span>Textile</span><span>Bougies</span></span>
+        <span class="site__icons">
+          <span class="site__icon site__icon--search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><span class="visually-hidden">Rechercher</span></span>
+          <span class="site__icon site__icon--account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span class="visually-hidden">Mon compte</span></span>
+          <span class="site__icon site__cart" data-site-cart><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><b data-site-cart-count>0</b><span class="visually-hidden"> article(s) dans le panier</span></span>
+        </span>
+        <nav class="site__menu" aria-label="Menu du site d'exemple"><span>Nouveautés</span><span>Luminaires</span><span>Vases</span><span>Textile</span><span>Bougies</span><span class="site__menu-search">Rechercher un produit…</span></nav>
+      </header>
+
+      <section class="site__hero">
+        <img class="site__hero-img" src="images/exemples/boutique/hero.jpg" width="1600" height="1067" alt="Miroir soleil doré au-dessus d'une console garnie d'objets de décoration">
+        <div class="site__hero-in">
+          <span class="site__kicker">Collection Automne</span>
+          <h3>La douceur des soirs d'automne</h3>
+          <p>Lumières chaudes, céramiques artisanales et textiles naturels : une sélection pour habiller votre intérieur.</p>
+          <div class="site__actions"><span class="site__btn">Découvrir</span></div>
+        </div>
+      </section>
+
+      <section class="site__section">
+        <div class="site__wrap">
+          <div class="site__cats">
+            <figure><img src="images/exemples/boutique/cat-luminaires.jpg" width="800" height="600" loading="lazy" alt="Suspension noire allumée"><figcaption>Luminaires</figcaption></figure>
+            <figure><img src="images/exemples/boutique/cat-vases.jpg" width="800" height="533" loading="lazy" alt="Vases en céramique aux formes douces"><figcaption>Vases</figcaption></figure>
+            <figure><img src="images/exemples/boutique/cat-textile.jpg" width="800" height="533" loading="lazy" alt="Coussins brodés sur un canapé blanc"><figcaption>Textile</figcaption></figure>
+            <figure><img src="images/exemples/boutique/cat-bougies.jpg" width="800" height="800" loading="lazy" alt="Bougie allumée à côté d'une tasse et de feuilles d'automne"><figcaption>Bougies</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="site__section site__section--tight">
+        <div class="site__wrap">
+          <div class="site__head site__head--row">
+            <h4 class="site__title">Nos coups de cœur</h4>
+            <span class="site__more">Voir tout →</span>
+          </div>
+          <ul class="site__products">
+            <li class="site__product">
+              <span class="site__product-img"><img src="images/exemples/boutique/lampe-halo.jpg" width="800" height="800" loading="lazy" alt="Lampe de bureau articulée en bois et métal noir"><span class="site__tag">Nouveau</span></span>
+              <h5>Lampe Halo</h5>
+              <span class="site__rating-sm"><span class="site__stars" aria-label="5 étoiles sur 5">★★★★★</span> (48)</span>
+              <span class="site__price">89 €</span>
+              <button class="site__add" type="button" data-site-add="Lampe Halo">Ajouter au panier</button>
+            </li>
+            <li class="site__product">
+              <span class="site__product-img"><img src="images/exemples/boutique/lampe-ambre.jpg" width="800" height="800" loading="lazy" alt="Lampe colonne en bois avec lumière ambrée"><span class="site__tag site__tag--sale">-20 %</span></span>
+              <h5>Lampe Colonne Ambre</h5>
+              <span class="site__rating-sm"><span class="site__stars" aria-label="4 étoiles sur 5">★★★★☆</span> (21)</span>
+              <span class="site__price"><s>149 €</s> 119 €</span>
+              <button class="site__add" type="button" data-site-add="Lampe Colonne Ambre">Ajouter au panier</button>
+            </li>
+            <li class="site__product">
+              <span class="site__product-img"><img src="images/exemples/boutique/vase-dune.jpg" width="800" height="533" loading="lazy" alt="Deux vases en grès texturé sur fond neutre"><span class="site__tag">Nouveau</span></span>
+              <h5>Vases Dune (×2)</h5>
+              <span class="site__rating-sm"><span class="site__stars" aria-label="5 étoiles sur 5">★★★★★</span> (32)</span>
+              <span class="site__price">49 €</span>
+              <button class="site__add" type="button" data-site-add="Vases Dune">Ajouter au panier</button>
+            </li>
+            <li class="site__product">
+              <span class="site__product-img"><img src="images/exemples/boutique/vases-sable.jpg" width="800" height="533" loading="lazy" alt="Petits vases roses et jaunes avec fleurs séchées"></span>
+              <h5>Trio Sable &amp; fleurs séchées</h5>
+              <span class="site__rating-sm"><span class="site__stars" aria-label="4 étoiles sur 5">★★★★☆</span> (17)</span>
+              <span class="site__price">54 €</span>
+              <button class="site__add" type="button" data-site-add="Trio Sable">Ajouter au panier</button>
+            </li>
+            <li class="site__product">
+              <span class="site__product-img"><img src="images/exemples/boutique/bougie-ambre.jpg" width="800" height="800" loading="lazy" alt="Bougie parfumée dans un pot en verre ambré avec couvercle en bois"></span>
+              <h5>Bougie Ambre &amp; Bois</h5>
+              <span class="site__rating-sm"><span class="site__stars" aria-label="5 étoiles sur 5">★★★★★</span> (112)</span>
+              <span class="site__price">28 €</span>
+              <button class="site__add" type="button" data-site-add="Bougie Ambre &amp; Bois">Ajouter au panier</button>
+            </li>
+            <li class="site__product">
+              <span class="site__product-img"><img src="images/exemples/boutique/bougie-figue.jpg" width="800" height="800" loading="lazy" alt="Bougie allumée dans une coupelle, entourée de fleurs séchées"><span class="site__tag site__tag--sale">-20 %</span></span>
+              <h5>Bougie Figue sauvage</h5>
+              <span class="site__rating-sm"><span class="site__stars" aria-label="5 étoiles sur 5">★★★★★</span> (64)</span>
+              <span class="site__price"><s>30 €</s> 24 €</span>
+              <button class="site__add" type="button" data-site-add="Bougie Figue sauvage">Ajouter au panier</button>
+            </li>
+            <li class="site__product">
+              <span class="site__product-img"><img src="images/exemples/boutique/coussin-lin.jpg" width="800" height="450" loading="lazy" alt="Coussins en lin blanc et vert sauge"></span>
+              <h5>Coussin Lin lavé</h5>
+              <span class="site__rating-sm"><span class="site__stars" aria-label="5 étoiles sur 5">★★★★★</span> (39)</span>
+              <span class="site__price">45 €</span>
+              <button class="site__add" type="button" data-site-add="Coussin Lin lavé">Ajouter au panier</button>
+            </li>
+            <li class="site__product">
+              <span class="site__product-img"><img src="images/exemples/boutique/coupelles.jpg" width="800" height="800" loading="lazy" alt="Trois coupelles en céramique blanche, terracotta et noire"><span class="site__tag">Nouveau</span></span>
+              <h5>Coupelles Terre (×3)</h5>
+              <span class="site__rating-sm"><span class="site__stars" aria-label="4 étoiles sur 5">★★★★☆</span> (26)</span>
+              <span class="site__price">36 €</span>
+              <button class="site__add" type="button" data-site-add="Coupelles Terre">Ajouter au panier</button>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="site__perks">
+        <div class="site__wrap">
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><b>Paiement sécurisé</b><span>CB, Apple Pay, PayPal</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg><b>Retours gratuits 30 jours</b><span>Satisfait ou remboursé</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4h14v12H1zM15 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg><b>Livraison 48 h</b><span>Offerte dès 60 €</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="site__section">
+        <div class="site__wrap">
+          <div class="site__news">
+            <div>
+              <span class="site__kicker">Newsletter</span>
+              <h4>-10 % sur votre première commande</h4>
+              <p>Nouveautés, inspirations et ventes privées, une fois par mois.</p>
+            </div>
+            <div class="site__news-form">
+              <span class="site__field">Votre adresse email</span>
+              <span class="site__btn">Je m'inscris</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site__footer">
+        <div class="site__wrap site__footer-cols">
+          <div>
+            <span class="site__logo">MAISON <em>LUMIÈRE</em></span>
+            <p>Objets de décoration sélectionnés auprès d'artisans européens.</p>
+          </div>
+          <div><b>Boutique</b><span>Nouveautés</span><span>Luminaires</span><span>Vases</span><span>Textile &amp; bougies</span></div>
+          <div><b>Aide</b><span>Livraison</span><span>Retours</span><span>Suivi de commande</span><span>Contact</span></div>
+          <div><b>Maison Lumière</b><span>Notre histoire</span><span>Nos artisans</span><span>CGV</span><span>Mentions légales</span></div>
+        </div>
+        <div class="site__wrap site__footer-bottom"><span>© Maison Lumière · Paiement sécurisé</span><span>Site d'exemple réalisé par Crea Tech Design</span></div>
+      </footer>
+      <div class="site__toast-zone"><p class="site__toast" role="status" data-site-toast></p></div>
+    </div>
+  </template>
+
+  <script src="js/main.js"></script>
+  <script src="js/effects-3d.js"></script>
+  <script src="js/showcase.js"></script>
+</body>
+</html>
