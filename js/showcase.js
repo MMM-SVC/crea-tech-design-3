@@ -10,7 +10,9 @@
 (function () {
   "use strict";
 
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Réglage du système OU option « Réduire les animations » du panneau Accessibilité (js/a11y.js)
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+    document.documentElement.classList.contains("a11y-reduce-motion");
 
   /* ---- 1. Données des sites ---- */
   var sites = Array.prototype.map.call(document.querySelectorAll("template[data-site]"), function (tpl) {
@@ -38,6 +40,7 @@
   var visual = showcase && showcase.closest(".hero__visual");
   var items = showcase ? Array.prototype.slice.call(showcase.querySelectorAll(".showcase__item")) : [];
   var tabs = visual ? Array.prototype.slice.call(visual.querySelectorAll(".showcase-tab")) : [];
+  var pauseBtn = visual ? visual.querySelector("[data-showcase-pause]") : null;
   var current = 0;
   var timer = 0, interacted = false, hovered = false, onScreen = true;
 
@@ -77,6 +80,11 @@
   function schedule() {
     clearInterval(timer);
     timer = 0;
+    if (pauseBtn) {
+      // Bouton « Pause / Lecture » du défilement automatique (WCAG 2.2.2)
+      pauseBtn.setAttribute("aria-pressed", String(interacted));
+      pauseBtn.querySelector("span").textContent = interacted ? "Reprendre le défilement" : "Mettre en pause le défilement";
+    }
     if (!reduceMotion && !interacted && !hovered && onScreen && !document.hidden) {
       timer = setInterval(function () { setActive(current + 1); }, 4500);
     }
@@ -134,9 +142,16 @@
     });
     showcase.addEventListener("pointercancel", function () { start = null; });
 
+    if (pauseBtn) {
+      if (reduceMotion) pauseBtn.hidden = true;
+      pauseBtn.addEventListener("click", function () {
+        interacted = !interacted;
+        schedule();
+      });
+    }
     visual.addEventListener("mouseenter", function () { hovered = true; schedule(); });
     visual.addEventListener("mouseleave", function () { hovered = false; schedule(); });
-    visual.addEventListener("focusin", stopAuto);
+    visual.addEventListener("focusin", function (e) { if (e.target !== pauseBtn) stopAuto(); });
     document.addEventListener("visibilitychange", schedule);
     if ("IntersectionObserver" in window) {
       new IntersectionObserver(function (entries) {

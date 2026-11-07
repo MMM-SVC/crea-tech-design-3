@@ -2,21 +2,25 @@
 <html lang="fr" class="no-js">
 <head>
   <meta charset="utf-8">
+  <!-- Sécurité (GitHub Pages n'envoie pas d'en-têtes HTTP personnalisés : voir README, rubrique Sécurité) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services &amp; tarifs | Crea Tech Design</title>
-  <meta name="description" content="Refonte de site à 1 900 € HT, site vitrine dès 2 480 € HT, site marchand à 4 390 € HT. Hébergement et maintenance inclus. Découvrez nos offres en détail.">
+  <meta name="description" content="Refonte de site à 1 900 € HT, site vitrine dès 2 480 € HT, site marchand sur devis dès 3 000 € HT. Hébergement et maintenance inclus. Découvrez nos offres en détail.">
   <meta name="theme-color" content="#0B0B14">
-  <link rel="canonical" href="https://www.createchdesign.fr/services.html">
+  <link rel="canonical" href="https://mmm-svc.github.io/crea-tech-design-3/services.html">
   <!-- Open Graph (aperçu lors d'un partage sur les réseaux) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Crea Tech Design">
   <meta property="og:title" content="Services &amp; tarifs | Crea Tech Design">
-  <meta property="og:description" content="Refonte de site à 1 900 € HT, site vitrine dès 2 480 € HT, site marchand à 4 390 € HT. Hébergement et maintenance inclus. Découvrez nos offres en détail.">
-  <meta property="og:url" content="https://www.createchdesign.fr/services.html">
-  <meta property="og:image" content="https://www.createchdesign.fr/images/og-image.jpg">
+  <meta property="og:description" content="Refonte de site à 1 900 € HT, site vitrine dès 2 480 € HT, site marchand sur devis dès 3 000 € HT. Hébergement et maintenance inclus. Découvrez nos offres en détail.">
+  <meta property="og:url" content="https://mmm-svc.github.io/crea-tech-design-3/services.html">
+  <meta property="og:image" content="https://mmm-svc.github.io/crea-tech-design-3/images/og-image.jpg">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <script src="js/a11y-init.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head><body>
   <a class="skip-link" href="#main">Aller au contenu</a>
@@ -36,14 +40,14 @@
           <li><a class="nav__link" href="index.html">Accueil</a></li>
           <li><a class="nav__link" href="services.html" aria-current="page">Services &amp; tarifs</a></li>
           <li><a class="nav__link" href="a-propos.html">Qui sommes-nous ?</a></li>
-          <li><a class="nav__link" href="contact.html">Contact</a></li>
+          <li><a class="nav__link" href="contact.html">Contact &amp; devis</a></li>
         </ul>
         <a class="btn btn--primary" href="contact.html">Demander un devis</a>
       </nav>
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
 
     <section class="page-hero" data-parallax>
       <div class="container page-hero__grid">
@@ -52,8 +56,9 @@
           <h1>Des offres claires, <span class="text-gradient">tout compris</span></h1>
           <p>Chaque offre inclut la création, l'hébergement et la maintenance de votre site. Pas de frais cachés : vous savez exactement ce que vous payez.</p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#offres">Voir les offres</a>
-            <a class="btn btn--ghost" href="#comparatif">Comparer</a>
+            <a class="btn btn--primary" href="contact.html">Demander un devis</a>
+            <a class="link-arrow" href="#offres">Voir les offres</a>
+            <a class="link-arrow" href="#comparatif">Comparer les offres</a>
           </div>
         </div>
         <!-- Visuel décoratif : cartes de prix flottantes et formes géométriques en 3D -->
@@ -62,7 +67,7 @@
             <span class="ring3d"></span>
             <div class="price-scene__card price-scene__card--1"><small>Refonte</small><strong>1 900 € HT</strong><i></i><i></i><i></i></div>
             <div class="price-scene__card price-scene__card--2"><small>Vitrine Premium</small><strong>2 890 € HT</strong><i></i><i></i><i></i></div>
-            <div class="price-scene__card price-scene__card--3"><small>Site marchand</small><strong>4 390 € HT</strong><i></i><i></i><i></i></div>
+            <div class="price-scene__card price-scene__card--3"><small>Site marchand</small><strong>dès 3 000 € HT</strong><i></i><i></i><i></i></div>
             <div class="cube"><span></span><span></span><span></span><span></span><span></span><span></span></div>
             <span class="orb"></span>
           </div>
@@ -71,8 +76,9 @@
     </section>
 
     <!-- ===== OFFRES ===== -->
-    <section class="section section--tight" id="offres">
+    <section class="section section--tight" id="offres" aria-labelledby="offres-title">
       <div class="container">
+        <h2 class="visually-hidden" id="offres-title">Nos offres et tarifs</h2>
         <div class="pricing">
           <article class="price-card reveal" data-tilt="4" id="refonte">
             <h3>Refonte de site</h3>
@@ -121,14 +127,16 @@
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Maintenance du site incluse</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Accompagnement prioritaire</span></li>
             </ul>
-            <a class="btn btn--primary btn--block" href="contact.html?offre=premium">Choisir cette offre<span class="visually-hidden"> : Site vitrine Premium</span></a>
+            <a class="btn btn--ghost btn--block" href="contact.html?offre=premium">Choisir cette offre<span class="visually-hidden"> : Site vitrine Premium</span></a>
           </article>
           <article class="price-card reveal" data-tilt="4" id="ecommerce">
             <h3>Site marchand</h3>
             <p class="price-card__desc">Vendez vos produits en ligne, en toute sécurité.</p>
-            <div class="price">
-              <!-- PRIX --><span class="price__amount" data-count>4 390 €</span><!-- /PRIX --> <span class="price__note">HT</span>
+            <div class="price price--from">
+              <span class="price__from">À partir de</span>
+              <!-- PRIX --><span class="price__amount" data-count>3 000 €</span><!-- /PRIX --> <span class="price__note">HT</span>
             </div>
+            <p class="price-card__quote">Devis sur mesure selon vos besoins</p>
             <ul class="checklist">
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Tout le site vitrine</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Boutique en ligne et catalogue produits</span></li>
@@ -137,7 +145,7 @@
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Hébergement classique inclus</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Maintenance du site incluse</span></li>
             </ul>
-            <a class="btn btn--ghost btn--block" href="contact.html?offre=ecommerce">Choisir cette offre<span class="visually-hidden"> : Site marchand</span></a>
+            <a class="btn btn--ghost btn--block" href="contact.html?offre=ecommerce">Demander un devis<span class="visually-hidden"> pour un site marchand</span></a>
           </article>
         </div>
         <p class="prices-note reveal">Prix indiqués hors taxes (TVA 20 % en sus). Paiement à la livraison, sans acompte. Voir nos <a href="cgv.html">conditions générales de vente</a>.</p>
@@ -159,7 +167,7 @@
               <!-- PRIX --><span class="price__amount" data-count>+45 €</span><!-- /PRIX -->
               <span class="price__note">HT / mois</span>
             </div>
-            <a class="btn btn--primary btn--light" href="contact.html?abonnement=1">Ajouter l'abonnement</a>
+            <a class="btn btn--ghost" href="contact.html?abonnement=1">Ajouter l'abonnement</a>
           </div>
         </div>
       </div>
@@ -173,7 +181,6 @@
           <h2 id="compare-title">Quelle offre <span class="text-gradient">pour vous</span> ?</h2>
           <p>Toutes les fonctionnalités, offre par offre.</p>
         </div>
-        <!-- À VALIDER : lignes « Formulaire & SEO » (Refonte) et « Nom de domaine » (Site marchand) déduites des cartes ci-dessus -->
         <div class="compare reveal" role="region" aria-labelledby="compare-title" tabindex="0">
           <table class="compare__table">
             <caption class="visually-hidden">Fonctionnalités incluses dans chaque offre</caption>
@@ -183,7 +190,7 @@
                 <th scope="col">Refonte<span>1 900 € HT</span></th>
                 <th scope="col">Vitrine Classique<span>2 480 € HT</span></th>
                 <th scope="col" class="is-featured">Vitrine Premium<span>2 890 € HT</span></th>
-                <th scope="col">Site marchand<span>4 390 € HT</span></th>
+                <th scope="col">Site marchand<span>dès 3 000 € HT, sur devis</span></th>
               </tr>
             </thead>
             <tbody>
@@ -192,7 +199,7 @@
               <tr><th scope="row">Maintenance incluse</th><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td><td class="is-featured"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td></tr>
               <tr><th scope="row">Sécurisation et protection des données</th><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td><td class="is-featured"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td></tr>
               <tr><th scope="row">Reprise et optimisation de vos contenus</th><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Non inclus</span></span></td><td class="is-featured"><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Non inclus</span></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Non inclus</span></span></td></tr>
-              <tr><th scope="row">Formulaire de contact et SEO de base</th><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Non inclus</span></span></td><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td><td class="is-featured"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td></tr>
+              <tr><th scope="row">Formulaire de contact et référencement (SEO) de base</th><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Non inclus</span></span></td><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td><td class="is-featured"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td></tr>
               <tr><th scope="row">Nom de domaine personnalisé</th><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Non inclus</span></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Non inclus</span></span></td><td class="is-featured"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Non inclus</span></span></td></tr>
               <tr><th scope="row">4 modifications gratuites par mois</th><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Non inclus</span></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Non inclus</span></span></td><td class="is-featured"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Non inclus</span></span></td></tr>
               <tr><th scope="row">Accompagnement prioritaire</th><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Non inclus</span></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Non inclus</span></span></td><td class="is-featured"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span class="visually-hidden">Inclus</span></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg><span class="visually-hidden">Non inclus</span></span></td></tr>
@@ -241,27 +248,22 @@
         <div class="faq">
           <details class="reveal">
             <summary>Combien de temps faut-il pour créer mon site ?</summary>
-            <!-- À VALIDER -->
             <p>En général, comptez 2 à 4 semaines pour un site vitrine et 4 à 8 semaines pour un site marchand, selon la quantité de contenu et vos retours. Nous vous donnons un planning précis dès le devis.</p>
           </details>
           <details class="reveal">
             <summary>L'hébergement est-il vraiment inclus ?</summary>
-            <!-- À VALIDER -->
             <p>Oui. Toutes nos offres comprennent un hébergement classique et la maintenance du site. Vous n'avez aucun prestataire supplémentaire à gérer.</p>
           </details>
           <details class="reveal">
             <summary>Le site m'appartient-il ?</summary>
-            <!-- À VALIDER -->
             <p>Oui, le site et ses contenus vous appartiennent. Si vous souhaitez un jour changer de prestataire, nous vous remettons l'ensemble des fichiers.</p>
           </details>
           <details class="reveal">
             <summary>Comment fonctionnent les modifications ?</summary>
-            <!-- À VALIDER -->
             <p>Avec l'offre Premium, vous bénéficiez de 4 modifications gratuites par mois. Avec l'abonnement mensuel à 45 € HT, les modifications sont illimitées. Sinon, chaque modification fait l'objet d'un petit devis.</p>
           </details>
           <details class="reveal">
             <summary>Comment protégez-vous mon site et mes clients ?</summary>
-            <!-- À VALIDER -->
             <p>Grâce à notre double compétence en cybersécurité : connexion HTTPS, mises à jour régulières, sauvegardes, protection des formulaires contre le spam et respect du RGPD. Les données de vos clients sont protégées.</p>
           </details>
           <details class="reveal">
@@ -284,8 +286,8 @@
             <h2>Une offre vous <span class="text-gradient">intéresse</span> ?</h2>
             <p>Décrivez-nous votre projet : nous vous conseillons la formule la plus adaptée, sans engagement.</p>
             <div class="hero__actions">
-              <a class="btn btn--primary btn--light" href="contact.html">Demander un devis gratuit</a>
-              <a class="btn btn--ghost" href="#offres">Revoir les offres</a>
+              <a class="btn btn--primary" href="contact.html">Demander un devis</a>
+              <a class="link-arrow" href="#offres">Revoir les offres</a>
             </div>
           </div>
         </div>
@@ -304,41 +306,54 @@
           </a>
           <p>Création de sites vitrines, sites marchands et refontes pour les PME. Le design et la cybersécurité réunis pour votre visibilité en ligne.</p>
         </div>
-        <div>
-          <h3>Navigation</h3>
+        <nav aria-labelledby="footer-nav-title">
+          <h2 id="footer-nav-title">Navigation</h2>
           <ul>
             <li><a href="index.html">Accueil</a></li>
             <li><a href="services.html">Services &amp; tarifs</a></li>
             <li><a href="a-propos.html">Qui sommes-nous ?</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Contact &amp; devis</a></li>
           </ul>
-        </div>
+        </nav>
         <div>
-          <h3>Nos offres</h3>
+          <h2>Nos offres</h2>
           <ul>
-            <li><a href="services.html#offres">Refonte de site</a></li>
-            <li><a href="services.html#offres">Site vitrine</a></li>
-            <li><a href="services.html#offres">Site marchand</a></li>
+            <li><a href="services.html#refonte">Refonte de site</a></li>
+            <li><a href="services.html#vitrine">Site vitrine</a></li>
+            <li><a href="services.html#ecommerce">Site marchand</a></li>
             <li><a href="services.html#abonnement">Abonnement mensuel</a></li>
           </ul>
         </div>
         <div>
-          <h3>Contact</h3>
+          <h2>Contact</h2>
           <ul>
             <li><a href="mailto:createch.design75@outlook.fr">createch.design75@outlook.fr</a></li>
+            <li><a href="tel:+33768341805">07 68 34 18 05</a></li>
             <li>Paris &amp; Île-de-France</li>
           </ul>
         </div>
+        <nav aria-labelledby="footer-legal-title">
+          <h2 id="footer-legal-title">Informations légales</h2>
+          <ul>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="cgv.html">CGV</a></li>
+            <li><a href="cgu.html">CGU</a></li>
+            <li><a href="confidentialite.html">Confidentialité</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="accessibilite.html">Accessibilité</a></li>
+          </ul>
+        </nav>
       </div>
       <div class="footer__bottom">
         <!-- Numéros FICTIFS (maquette interne) : à remplacer par les vrais avant toute publication -->
         <p>© <span data-year>2026</span> Crea Tech Design — SARL au capital de 10 000 € — SIRET 924 581 376 00018</p>
-        <p><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></p>
+        <p>Ce site n'utilise aucun cookie de suivi. <a href="cookies.html">En savoir plus sur les cookies</a></p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/a11y.js"></script>
   <script src="js/effects-3d.js"></script>
 </body>
 </html>

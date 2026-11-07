@@ -2,21 +2,25 @@
 <html lang="fr" class="no-js">
 <head>
   <meta charset="utf-8">
+  <!-- Sécurité (GitHub Pages n'envoie pas d'en-têtes HTTP personnalisés : voir README, rubrique Sécurité) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Qui sommes-nous ? | Crea Tech Design</title>
   <meta name="description" content="Crea Tech Design, c'est deux associés : un designer web et un expert en cybersécurité, réunis pour aider les PME à exister en ligne.">
   <meta name="theme-color" content="#0B0B14">
-  <link rel="canonical" href="https://www.createchdesign.fr/a-propos.html">
+  <link rel="canonical" href="https://mmm-svc.github.io/crea-tech-design-3/a-propos.html">
   <!-- Open Graph (aperçu lors d'un partage sur les réseaux) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Crea Tech Design">
   <meta property="og:title" content="Qui sommes-nous ? | Crea Tech Design">
   <meta property="og:description" content="Crea Tech Design, c'est deux associés : un designer web et un expert en cybersécurité, réunis pour aider les PME à exister en ligne.">
-  <meta property="og:url" content="https://www.createchdesign.fr/a-propos.html">
-  <meta property="og:image" content="https://www.createchdesign.fr/images/og-image.jpg">
+  <meta property="og:url" content="https://mmm-svc.github.io/crea-tech-design-3/a-propos.html">
+  <meta property="og:image" content="https://mmm-svc.github.io/crea-tech-design-3/images/og-image.jpg">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <script src="js/a11y-init.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head><body>
   <a class="skip-link" href="#main">Aller au contenu</a>
@@ -36,14 +40,14 @@
           <li><a class="nav__link" href="index.html">Accueil</a></li>
           <li><a class="nav__link" href="services.html">Services &amp; tarifs</a></li>
           <li><a class="nav__link" href="a-propos.html" aria-current="page">Qui sommes-nous ?</a></li>
-          <li><a class="nav__link" href="contact.html">Contact</a></li>
+          <li><a class="nav__link" href="contact.html">Contact &amp; devis</a></li>
         </ul>
         <a class="btn btn--primary" href="contact.html">Demander un devis</a>
       </nav>
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
 
     <section class="page-hero" data-parallax>
       <div class="container page-hero__grid">
@@ -51,6 +55,9 @@
           <span class="eyebrow">Qui sommes-nous ?</span>
           <h1>Deux expertises, <span class="text-gradient">une même mission</span></h1>
           <p>Aider les PME à exister sur internet avec des sites professionnels, performants et sécurisés.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="contact.html">Demander un devis</a>
+          </div>
           <div class="stats">
             <div><strong data-count>2</strong><span>associés experts</span></div>
             <div><strong data-count>100 %</strong><span>sites sécurisés</span></div>
@@ -135,12 +142,12 @@
                 <div class="flip__face flip__face--front">
                   <!-- Pour une photo : remplacez <span class="avatar__initials">…</span> par <img class="avatar__photo" src="images/photo.jpg" alt=""> -->
                   <div class="avatar" aria-hidden="true"><span class="avatar__initials">HL</span></div>
-                  <h3>Hugo Lefèvre <!-- Nom fictif : à remplacer --></h3>
+                  <h3>Hugo Lefèvre</h3>
                   <p class="team-card__role">Co-fondateur · Designer web</p>
                   <p class="team-card__hint">Découvrez son profil au dos de la carte</p>
                 </div>
                 <div class="flip__face flip__face--back">
-                  <p class="team-card__role">Hugo Lefèvre <!-- Nom fictif : à remplacer --> · Designer web</p>
+                  <p class="team-card__role">Hugo Lefèvre · Designer web</p>
                   <p class="team-card__bio">Diplômé en design web, Hugo imagine des sites modernes et intuitifs, pensés pour vos clients et à l'image de votre entreprise.</p>
                   <blockquote class="team-card__quote">« Un bon design ne se remarque pas : il guide naturellement vos visiteurs. »</blockquote>
                   <ul class="team-card__facts">
@@ -148,7 +155,7 @@
                     <li><strong>Mobile d'abord</strong> : pensé pour vos clients pressés</li>
                     <li><strong>Maquette validée</strong> avec vous avant le développement</li>
                   </ul>
-                  <a class="btn btn--primary" href="contact.html">Le contacter</a>
+                  <a class="btn btn--ghost" href="contact.html">Nous écrire</a>
                 </div>
               </div>
               <button class="flip__toggle" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg><span>Retourner<span class="visually-hidden"> la carte de Hugo Lefèvre</span></span></button>
@@ -168,12 +175,12 @@
                 <div class="flip__face flip__face--front">
                   <!-- Pour une photo : remplacez <span class="avatar__initials">…</span> par <img class="avatar__photo" src="images/photo.jpg" alt=""> -->
                   <div class="avatar" aria-hidden="true"><span class="avatar__initials">MD</span></div>
-                  <h3>Maxime Durand <!-- Nom fictif : à remplacer --></h3>
+                  <h3>Maxime Durand</h3>
                   <p class="team-card__role">Co-fondateur · Expert en cybersécurité</p>
                   <p class="team-card__hint">Découvrez son profil au dos de la carte</p>
                 </div>
                 <div class="flip__face flip__face--back">
-                  <p class="team-card__role">Maxime Durand <!-- Nom fictif : à remplacer --> · Expert en cybersécurité</p>
+                  <p class="team-card__role">Maxime Durand · Expert en cybersécurité</p>
                   <p class="team-card__bio">Diplômé en cybersécurité, Maxime veille à la protection de chaque site : hébergement fiable, sécurité des données et conformité.</p>
                   <blockquote class="team-card__quote">« Un beau site doit d'abord être un site sûr. »</blockquote>
                   <ul class="team-card__facts">
@@ -181,7 +188,7 @@
                     <li><strong>RGPD</strong> : conformité vérifiée avant la mise en ligne</li>
                     <li><strong>Mises à jour de sécurité</strong> suivies pour vous</li>
                   </ul>
-                  <a class="btn btn--primary" href="contact.html">Le contacter</a>
+                  <a class="btn btn--ghost" href="contact.html">Nous écrire</a>
                 </div>
               </div>
               <button class="flip__toggle" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg><span>Retourner<span class="visually-hidden"> la carte de Maxime Durand</span></span></button>
@@ -237,7 +244,7 @@
           <span class="eyebrow">Zone d'intervention</span>
           <h2>Basés en Île-de-France, <span class="text-gradient">bientôt partout en France</span></h2>
           <p>Nous accompagnons aujourd'hui les entreprises de Paris et d'Île-de-France, et nous pouvons nous déplacer pour vous rencontrer. Notre ambition : accompagner les PME partout en France.</p>
-          <a class="btn btn--primary" href="contact.html">Discutons de votre projet</a>
+          <a class="link-arrow" href="contact.html">Discutons de votre projet</a>
         </div>
         <!-- Carte stylisée : cercles qui pulsent depuis Paris -->
         <div class="zone__map reveal" aria-hidden="true">
@@ -269,8 +276,8 @@
             <h2>Prêt à donner de la <span class="text-gradient">visibilité</span> à votre entreprise ?</h2>
             <p>Parlez-nous de votre projet : nous vous répondons sous 24 à 48 h avec une proposition claire et sans engagement.</p>
             <div class="hero__actions">
-              <a class="btn btn--primary btn--light" href="contact.html">Demander un devis gratuit</a>
-              <a class="btn btn--ghost" href="services.html">Voir nos offres</a>
+              <a class="btn btn--primary" href="contact.html">Demander un devis</a>
+              <a class="link-arrow" href="services.html">Voir nos offres</a>
             </div>
           </div>
         </div>
@@ -289,41 +296,54 @@
           </a>
           <p>Création de sites vitrines, sites marchands et refontes pour les PME. Le design et la cybersécurité réunis pour votre visibilité en ligne.</p>
         </div>
-        <div>
-          <h3>Navigation</h3>
+        <nav aria-labelledby="footer-nav-title">
+          <h2 id="footer-nav-title">Navigation</h2>
           <ul>
             <li><a href="index.html">Accueil</a></li>
             <li><a href="services.html">Services &amp; tarifs</a></li>
             <li><a href="a-propos.html">Qui sommes-nous ?</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Contact &amp; devis</a></li>
           </ul>
-        </div>
+        </nav>
         <div>
-          <h3>Nos offres</h3>
+          <h2>Nos offres</h2>
           <ul>
-            <li><a href="services.html#offres">Refonte de site</a></li>
-            <li><a href="services.html#offres">Site vitrine</a></li>
-            <li><a href="services.html#offres">Site marchand</a></li>
+            <li><a href="services.html#refonte">Refonte de site</a></li>
+            <li><a href="services.html#vitrine">Site vitrine</a></li>
+            <li><a href="services.html#ecommerce">Site marchand</a></li>
             <li><a href="services.html#abonnement">Abonnement mensuel</a></li>
           </ul>
         </div>
         <div>
-          <h3>Contact</h3>
+          <h2>Contact</h2>
           <ul>
             <li><a href="mailto:createch.design75@outlook.fr">createch.design75@outlook.fr</a></li>
+            <li><a href="tel:+33768341805">07 68 34 18 05</a></li>
             <li>Paris &amp; Île-de-France</li>
           </ul>
         </div>
+        <nav aria-labelledby="footer-legal-title">
+          <h2 id="footer-legal-title">Informations légales</h2>
+          <ul>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="cgv.html">CGV</a></li>
+            <li><a href="cgu.html">CGU</a></li>
+            <li><a href="confidentialite.html">Confidentialité</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="accessibilite.html">Accessibilité</a></li>
+          </ul>
+        </nav>
       </div>
       <div class="footer__bottom">
         <!-- Numéros FICTIFS (maquette interne) : à remplacer par les vrais avant toute publication -->
         <p>© <span data-year>2026</span> Crea Tech Design — SARL au capital de 10 000 € — SIRET 924 581 376 00018</p>
-        <p><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></p>
+        <p>Ce site n'utilise aucun cookie de suivi. <a href="cookies.html">En savoir plus sur les cookies</a></p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/a11y.js"></script>
   <script src="js/effects-3d.js"></script>
 </body>
 </html>

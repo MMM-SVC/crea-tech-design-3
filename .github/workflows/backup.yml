@@ -1,0 +1,70 @@
+# ==========================================================================
+# Sauvegarde automatique du site Crea Tech Design
+# Chaque lundi à 3 h (heure de Paris, à une heure près selon l'heure d'été)
+# et à la demande (onglet « Actions » > « Sauvegarde du site » > « Run workflow ») :
+#   1. crée une archive ZIP du site (contenu de la branche principale) ;
+#   2. la publie comme « release » GitHub datée : sauvegarde-AAAA-MM-JJ ;
+#   3. ne garde que les 8 dernières sauvegardes.
+# Restauration : voir le README, rubrique « Sauvegardes ».
+# ==========================================================================
+name: Sauvegarde du site
+
+on:
+  schedule:
+    - cron: "0 2 * * 1" # lundi 02:00 UTC = 3 h à Paris en hiver (4 h en été)
+  workflow_dispatch:
+
+# Permissions minimales : écrire les releases du dépôt, rien d'autre
+permissions:
+  contents: write
+
+concurrency:
+  group: sauvegarde
+  cancel-in-progress: false
+
+jobs:
+  sauvegarde:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Récupérer le site
+        # Version épinglée par son empreinte (actions/checkout v4.2.2)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+
+      - name: Créer l'archive ZIP
+        id: archive
+        run: |
+          DATE="$(TZ=Europe/Paris date +%Y-%m-%d)"
+          TAG="sauvegarde-${DATE}"
+          # Deux sauvegardes le même jour (lancement manuel) : on ajoute l'heure
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            TAG="${TAG}-$(TZ=Europe/Paris date +%Hh%M)"
+          fi
+          git archive --format=zip --prefix="crea-tech-design/" -o "${TAG}.zip" HEAD
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          echo "date=${DATE}" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Publier la sauvegarde (release GitHub)
+        run: |
+          gh release create "${{ steps.archive.outputs.tag }}" "${{ steps.archive.outputs.tag }}.zip" \
+            --title "Sauvegarde du ${{ steps.archive.outputs.date }}" \
+            --notes "Sauvegarde automatique du site (commit ${GITHUB_SHA::7}). Pour restaurer : voir le README, rubrique « Sauvegardes »." \
+            --target "${GITHUB_SHA}"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Ne garder que les 8 dernières sauvegardes
+        run: |
+          gh release list --limit 100 --json tagName,createdAt \
+            --jq '[.[] | select(.tagName | startswith("sauvegarde-"))] | sort_by(.createdAt) | reverse | .[8:] | .[].tagName' |
+          while read -r OLD_TAG; do
+            [ -n "$OLD_TAG" ] || continue
+            echo "Suppression de l'ancienne sauvegarde ${OLD_TAG}"
+            gh release delete "$OLD_TAG" --yes --cleanup-tag
+          done
+        env:
+          GH_TOKEN: ${{ github.token }}

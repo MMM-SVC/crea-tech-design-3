@@ -22,8 +22,30 @@
 
   document.documentElement.classList.remove("no-js");
 
+  /* ---- Protection anti-clickjacking ----
+     L'en-tête frame-ancestors ne fonctionne pas en balise meta (GitHub Pages) : si la page est
+     affichée dans un cadre (iframe) d'un autre site, elle se masque et propose d'ouvrir le site. */
+  if (window.self !== window.top) {
+    document.documentElement.classList.add("is-framed");
+    var guard = document.createElement("div");
+    guard.className = "frame-guard";
+    var guardText = document.createElement("p");
+    guardText.textContent = "Pour votre sécurité, ce site ne peut pas être affiché dans un cadre.";
+    var guardLink = document.createElement("a");
+    guardLink.href = window.location.href;
+    guardLink.target = "_blank";
+    guardLink.rel = "noopener noreferrer";
+    guardLink.textContent = "Ouvrir le site Crea Tech Design (nouvelle fenêtre)";
+    guard.appendChild(guardText);
+    guard.appendChild(guardLink);
+    document.body.appendChild(guard);
+    return;
+  }
+
   /* ---- 1. Réglages communs ---- */
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Réglage du système OU option « Réduire les animations » du panneau Accessibilité (js/a11y.js)
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+    document.documentElement.classList.contains("a11y-reduce-motion");
   // Souris précise (ordinateur) : active les effets qui suivent le curseur
   var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   var raf = window.requestAnimationFrame.bind(window);
@@ -33,6 +55,19 @@
     new IntersectionObserver(function (entries) {
       callback(entries[entries.length - 1].isIntersecting);
     }, options).observe(el);
+  }
+
+  /* ---- Page 404 (balise <base>) : les liens « #ancre » (dont « Aller au contenu ») restent sur la page ---- */
+  if (document.querySelector("base[href]")) {
+    document.addEventListener("click", function (e) {
+      var link = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!link) return;
+      var target = document.getElementById(link.getAttribute("href").slice(1));
+      if (!target) return;
+      e.preventDefault();
+      if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+      target.focus();
+    });
   }
 
   /* ---- Année dynamique du footer ---- */
@@ -657,21 +692,102 @@
 
   var status = document.getElementById("form-status");
   var submitBtn = form.querySelector('button[type="submit"]');
+  var SUBMIT_LABEL = "Envoyer ma demande";
   var CONTACT_EMAIL = "createch.design75@outlook.fr";
   var SUCCESS_TEXT = "Merci ! Votre demande a bien été envoyée. Nous vous répondons sous 24 à 48 h ouvrées.";
   var fallbackUsed = false;
-  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  /* Anti-spam côté site (en plus du honeypot « botcheck » et des filtres de Web3Forms) :
+     - piège temporel : un envoi moins de 3 s après l'affichage de la page est refusé (robot) ;
+     - après un envoi réussi, le bouton est bloqué 60 s ;
+     - 3 envois maximum par heure depuis ce navigateur. Seules les heures d'envoi sont conservées
+       (localStorage « ctd-envois », aucune donnée personnelle, voir cookies.html). */
+  var MIN_DELAY = 3000, COOLDOWN = 60000, HOUR = 3600000, MAX_PER_HOUR = 3, SENDS_KEY = "ctd-envois";
+  var pageShownAt = Date.now();
+
+  function readSends() {
+    try {
+      var now = Date.now();
+      var list = JSON.parse(window.localStorage.getItem(SENDS_KEY) || "[]");
+      if (!Array.isArray(list)) return [];
+      return list.filter(function (time) { return typeof time === "number" && time <= now && now - time < HOUR; });
+    } catch (e) { return []; }
+  }
+  function writeSends(list) {
+    try {
+      if (list.length) window.localStorage.setItem(SENDS_KEY, JSON.stringify(list));
+      else window.localStorage.removeItem(SENDS_KEY);
+    } catch (e) { /* stockage indisponible : la limite s'applique à cette page seulement */ }
+  }
+  function recordSend() {
+    var list = readSends();
+    list.push(Date.now());
+    writeSends(list);
+  }
+  writeSends(readSends()); // efface les heures d'envoi de plus d'une heure
+
+  var lockTimer = 0;
+  function lockButton(ms) {
+    clearTimeout(lockTimer);
+    var end = Date.now() + ms;
+    (function tick() {
+      var left = Math.ceil((end - Date.now()) / 1000);
+      if (left <= 0) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = SUBMIT_LABEL;
+        return;
+      }
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Nouvel envoi possible dans " + left + " s";
+      lockTimer = setTimeout(tick, 1000);
+    })();
+  }
+  var previous = readSends();
+  if (previous.length) {
+    var since = Date.now() - previous[previous.length - 1];
+    if (since < COOLDOWN) lockButton(COOLDOWN - since);
+  }
+
+  var emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*\.[A-Za-z]{2,}$/;
+  var phonePattern = /^\+?[0-9 .()-]{6,20}$/;
+  function countLinks(v) { return (v.match(/(https?:\/\/|www\.)/gi) || []).length; }
 
   var validators = {
-    nom: function (v) { return v.trim().length >= 2 || "Merci d'indiquer votre nom."; },
-    email: function (v) { return emailPattern.test(v.trim()) || "Merci d'indiquer une adresse email valide."; },
-    message: function (v) { return v.trim().length >= 10 || "Votre message doit contenir au moins 10 caractères."; },
+    nom: function (v) {
+      if (v.length < 2) return "Merci d'indiquer votre nom.";
+      return v.length <= 100 || "Votre nom ne doit pas dépasser 100 caractères.";
+    },
+    entreprise: function (v) { return v.length <= 100 || "Le nom de l'entreprise ne doit pas dépasser 100 caractères."; },
+    email: function (v) {
+      if (v.length > 254 || !emailPattern.test(v) || v.indexOf("..") !== -1) return "Merci d'indiquer une adresse email valide (par exemple : nom@entreprise.fr).";
+      return true;
+    },
+    telephone: function (v) {
+      if (!v) return true;
+      var digits = v.replace(/\D/g, "").length;
+      return (phonePattern.test(v) && digits >= 6 && digits <= 15) || "Merci d'indiquer un numéro de téléphone valide (chiffres, espaces, + ou tirets).";
+    },
+    message: function (v) {
+      if (v.length < 10) return "Votre message doit contenir au moins 10 caractères.";
+      if (v.length > 3000) return "Votre message ne doit pas dépasser 3 000 caractères.";
+      return countLinks(v) <= 3 || "Votre message contient trop de liens (3 au maximum).";
+    },
     rgpd: function (v, el) { return el.checked || "Merci d'accepter l'utilisation de vos données pour être recontacté."; }
   };
+
+  // Nettoyage des espaces superflus avant la vérification
+  function clean(el) {
+    if (el.type === "checkbox" || el.tagName === "SELECT") return;
+    var v = el.value.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "");
+    v = el.tagName === "TEXTAREA" ? v.replace(/[ \t]+\n/g, "\n").replace(/\n{4,}/g, "\n\n\n").trim() : v.replace(/\s+/g, " ").trim();
+    if (el.name === "email") v = v.replace(/\s/g, "");
+    if (v !== el.value) el.value = v;
+  }
 
   function validateField(el) {
     var rule = validators[el.name];
     if (!rule) return true;
+    clean(el);
     var result = rule(el.value, el);
     var field = el.closest(".field");
     var errorEl = field && field.querySelector(".field__error");
@@ -698,9 +814,16 @@
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    if (submitBtn.disabled) return; // envoi en cours ou bouton bloqué : pas de double envoi
 
     // Honeypot : si ce champ invisible est rempli, c'est un robot.
     if (form.elements.botcheck && form.elements.botcheck.checked) return;
+
+    // Piège temporel : un humain met plus de 3 secondes à remplir le formulaire
+    if (Date.now() - pageShownAt < MIN_DELAY) {
+      showStatus("error", "Merci de prendre quelques secondes pour relire votre demande avant de l'envoyer.");
+      return;
+    }
 
     var firstInvalid = null;
     Object.keys(validators).forEach(function (name) {
@@ -709,7 +832,12 @@
     });
     if (firstInvalid) {
       firstInvalid.focus();
-      showStatus("error", "Certains champs sont à corriger.");
+      showStatus("error", "Certains champs sont à corriger : les erreurs sont indiquées sous chaque champ concerné.");
+      return;
+    }
+
+    if (readSends().length >= MAX_PER_HOUR) {
+      showStatus("error", "Vous avez déjà envoyé " + MAX_PER_HOUR + " demandes au cours de la dernière heure. Merci de patienter un peu avant d'en envoyer une nouvelle, ou écrivez-nous directement à " + CONTACT_EMAIL + ".");
       return;
     }
 
@@ -721,8 +849,8 @@
 
     // Sujet de l'email reçu et adresse de réponse (champs cachés : utilisés aussi par l'envoi classique)
     var offreLabel = select ? select.options[select.selectedIndex].text.replace(/\s*\(.*\)$/, "") : "Site";
-    form.elements.subject.value = "Nouvelle demande de contact — " + offreLabel + " — " + form.elements.nom.value.trim();
-    form.elements.replyto.value = form.elements.email.value.trim();
+    form.elements.subject.value = "Nouvelle demande de contact — " + offreLabel + " — " + form.elements.nom.value;
+    form.elements.replyto.value = form.elements.email.value;
 
     var data = new FormData(form);
     data.delete("redirect");
@@ -730,6 +858,7 @@
 
     submitBtn.disabled = true;
     submitBtn.textContent = "Envoi en cours…";
+    showStatus("pending", "Envoi en cours…");
 
     fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -737,6 +866,12 @@
       body: data
     })
       .then(function (res) {
+        if (res.status === 429) {
+          var tooMany = new Error("429");
+          tooMany.answered = true;
+          tooMany.tooMany = true;
+          throw tooMany;
+        }
         return res.json().then(function (json) {
           if (!json.success) {
             var err = new Error(json.message || "Erreur");
@@ -746,10 +881,11 @@
         });
       })
       .then(function () {
+        recordSend();
         form.reset();
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Envoyer ma demande";
+        pageShownAt = Date.now();
         showStatus("success", SUCCESS_TEXT);
+        lockButton(COOLDOWN);
       })
       .catch(function (err) {
         // Pas de réponse (réseau, CORS en local…) : repli sur l'envoi classique du formulaire
@@ -758,12 +894,17 @@
           if (/^https?:$/.test(location.protocol)) {
             form.elements.redirect.value = location.href.split(/[?#]/)[0] + "?envoi=ok";
           }
+          recordSend();
           HTMLFormElement.prototype.submit.call(form);
           return;
         }
         submitBtn.disabled = false;
-        submitBtn.textContent = "Envoyer ma demande";
-        showStatus("error", "Oups, l'envoi a échoué. Réessayez ou écrivez-nous directement à " + CONTACT_EMAIL + ".");
+        submitBtn.textContent = SUBMIT_LABEL;
+        if (err.tooMany) {
+          showStatus("error", "Trop de demandes ont été envoyées depuis votre connexion. Merci de réessayer dans quelques minutes, ou écrivez-nous directement à " + CONTACT_EMAIL + ".");
+        } else {
+          showStatus("error", "Votre demande n'a pas pu être envoyée (le service d'envoi l'a refusée ou est indisponible). Réessayez dans quelques instants ou écrivez-nous directement à " + CONTACT_EMAIL + ".");
+        }
       });
   });
 })();

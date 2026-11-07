@@ -19,7 +19,9 @@
   "use strict";
 
   /* ---- 1. Réglages communs ---- */
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Réglage du système OU option « Réduire les animations » du panneau Accessibilité (js/a11y.js)
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+    document.documentElement.classList.contains("a11y-reduce-motion");
   var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   var raf = window.requestAnimationFrame.bind(window);
   var root = document.documentElement;

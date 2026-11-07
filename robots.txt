@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.createchdesign.fr/sitemap.xml
+Sitemap: https://mmm-svc.github.io/crea-tech-design-3/sitemap.xml

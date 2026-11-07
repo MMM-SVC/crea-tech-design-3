@@ -1,0 +1,22 @@
+# Fichiers système macOS / Windows
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Fichiers temporaires et d'éditeur
+*.tmp
+*.bak
+*.swp
+*~
+.vscode/
+.idea/
+
+# Secrets : ne jamais publier de clé secrète (voir README, rubrique Sécurité)
+.env
+.env.*
+*.pem
+*.key
+
+# Archives de sauvegarde téléchargées
+sauvegarde-*.zip
