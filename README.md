@@ -13,7 +13,8 @@ crea-tech-design/
 ├── index.html              Accueil
 ├── services.html           Services & tarifs (offres détaillées, abonnement, comparatif, FAQ)
 ├── a-propos.html           Qui sommes-nous ? (histoire, équipe, valeurs, zone)
-├── contact.html            Contact & devis : formulaire, interlocuteurs, coordonnées
+├── contact.html            Contact : formulaire simple, vos interlocuteurs, coordonnées
+├── devis.html              Demander un devis : formulaire de devis complet + « Comment ça se passe ? »
 ├── mentions-legales.html   Mentions légales (LCEN)
 ├── cgv.html                Conditions générales de vente (clients professionnels)
 ├── cgu.html                Conditions générales d'utilisation du site + crédits photos
@@ -25,7 +26,7 @@ crea-tech-design/
 ├── js/a11y-init.js         Applique les préférences d'accessibilité dès le <head> (sans flash)
 ├── js/a11y.js              Panneau « Accessibilité » (bouton en bas à gauche de chaque page)
 ├── js/main.js              Commun : anti-clickjacking, menu, apparitions, tilt, compteurs, cartes qui
-│                           se retournent, infobulles, tarifs, FAQ, vidéo, formulaire + anti-spam
+│                           se retournent, infobulles, tarifs, FAQ, vidéo, formulaires + anti-spam
 ├── js/effects-3d.js        Effets 3D : chargement, titre mot par mot, scroll 3D, parallaxe, curseur
 ├── js/showcase.js          Accueil : vitrine des sites d'exemple + fenêtre d'aperçu
 ├── js/consent.js           Bandeau de consentement aux cookies — DÉSACTIVÉ (voir « Cookies »)
@@ -46,17 +47,17 @@ crea-tech-design/
 
 | Je veux changer… | Où ? |
 |---|---|
-| **Les prix** (toujours **HT**, TVA 20 % en sus) | Cherchez `<!-- PRIX -->` dans **`index.html`** (aperçu) **et** **`services.html`** (cartes, tableau comparatif, visuel du haut de page). Pensez aussi à la liste déroulante de `contact.html`, à l'article 3 de **`cgv.html`** et à `priceRange` dans le bloc JSON-LD en haut d'`index.html`. Le **Site marchand** est **sur devis, à partir de 3 000 € HT** (classe `price--from`). |
+| **Les prix** (toujours **HT**, TVA 20 % en sus) | Cherchez `<!-- PRIX -->` dans **`index.html`** (aperçu) **et** **`services.html`** (cartes, tableau comparatif, visuel du haut de page). Pensez aussi à la liste déroulante de `devis.html`, à l'article 3 de **`cgv.html`** et à `priceRange` dans le bloc JSON-LD en haut d'`index.html`. Le **Site marchand** est **sur devis, à partir de 3 000 € HT** (classe `price--from`). |
 | Le contenu d'une offre | `services.html`, section `id="offres"` |
 | Les couleurs du thème sombre | `css/style.css`, bloc `:root` tout en haut. Après un changement, revérifiez les contrastes (au moins 4,5:1 pour le texte). |
-| Le menu / le footer | Ils sont répétés dans **chaque** page HTML (11 pages, 404 comprise) : modifiez-les partout de la même façon (`Cmd + Shift + H` dans VS Code pour rechercher/remplacer dans tous les fichiers). |
-| Le bouton principal « Demander un devis » | C'est le **seul** bouton plein violet (`btn btn--primary`) : header, hero et bloc final de chaque page. Les autres actions sont des liens secondaires (`link-arrow`) ou des boutons discrets (`btn--ghost`). |
+| Le menu / le footer | Ils sont répétés dans **chaque** page HTML (12 pages, 404 comprise) : modifiez-les partout de la même façon (`Cmd + Shift + H` dans VS Code pour rechercher/remplacer dans tous les fichiers). |
+| Le bouton principal « Demander un devis » | C'est le **seul** bouton plein violet (`btn btn--primary`) : header, hero et bloc final de chaque page. Il mène à **`devis.html`** ; les boutons des offres ajoutent `?offre=refonte|vitrine|premium|ecommerce` et « Ajouter l'abonnement » ajoute `?abonnement=1`. Le lien « Contact » du menu et du footer mène à `contact.html`. Les autres actions sont des liens secondaires (`link-arrow`) ou des boutons discrets (`btn--ghost`). |
 | Les textes de la FAQ | `services.html`, bloc `class="faq"` |
-| **Les noms des fondateurs** | `a-propos.html` : nom au recto et au verso de chaque carte, texte caché du bouton « Retourner » (`la carte de Hugo Lefèvre`…), initiales (`HL`, `MD`) et prénom dans la bio. Sur `contact.html` (« Vos interlocuteurs ») : prénom, initiales, rôle et âge. |
+| **Les noms des fondateurs** | `a-propos.html` : nom au recto et au verso de chaque carte, texte caché du bouton « Retourner » (`la carte de Hugo Lefèvre`…), initiales (`HL`, `MD`) et prénom dans la bio. Sur `contact.html` (« Vos interlocuteurs ») : prénom, initiales, rôle et âge. La page `devis.html` ne contient volontairement aucun prénom. |
 | Une photo à la place des initiales | Remplacez `<span class="avatar__initials">HL</span>` par `<img class="avatar__photo" src="images/photo-hugo.jpg" alt="">` (photo carrée, 300 × 300 px suffit) |
 | Bio, citation et points forts | `a-propos.html`, verso de chaque carte (`flip__face--back`) |
 | Les textes des infobulles (UI / UX, RGPD…) | `a-propos.html`, balises `<span class="tooltip" role="tooltip">` juste après chaque compétence |
-| Le téléphone, l'email | Footer de chaque page, `contact.html`, `mentions-legales.html`, `confidentialite.html`, `accessibilite.html` et JSON-LD d'`index.html` (`telephone`, `email`) |
+| Le téléphone, l'email | Footer de chaque page, `contact.html`, `devis.html`, `mentions-legales.html`, `confidentialite.html`, `accessibilite.html` et JSON-LD d'`index.html` (`telephone`, `email`) |
 | Les CGV / CGU | `cgv.html`, `cgu.html` : un article = un `<h2 id="…">` ; si vous en ajoutez un, ajoutez son lien dans le sommaire (`legal-toc`) |
 | Les informations légales (SIRET, capital…) | Cherchez `Numéros FICTIFS` : `mentions-legales.html`, `cgv.html` (article 2) et le bas du footer de **chaque** page |
 | La description de la vidéo | `index.html`, paragraphe `id="video-desc"` (à mettre à jour si la vidéo change) |
@@ -77,7 +78,7 @@ crea-tech-design/
 - [ ] Relire les bios, citations et points forts des fondateurs, ainsi que les réponses de la FAQ
 - [ ] Tableau comparatif (`services.html`) : vérifier les lignes « Formulaire de contact et référencement (SEO) de base » pour la Refonte et « Nom de domaine personnalisé » pour le Site marchand
 - [ ] Vidéo : si la bande-son contient des paroles, ajouter des sous-titres (fichier `.vtt` avec une balise `<track>`) et mettre à jour `accessibilite.html`
-- [ ] Domaine personnalisé (plus tard) : remplacer `https://mmm-svc.github.io/crea-tech-design-3/` dans les balises `canonical` / `og:` de chaque page, le JSON-LD, `robots.txt`, `sitemap.xml` et le champ caché `redirect` de `contact.html` ; adapter aussi la balise `<base>` de `404.html` (voir « Page 404 »)
+- [ ] Domaine personnalisé (plus tard) : remplacer `https://mmm-svc.github.io/crea-tech-design-3/` dans les balises `canonical` / `og:` de chaque page, le JSON-LD, `robots.txt`, `sitemap.xml` et les champs cachés `redirect` de `contact.html` et `devis.html` ; adapter aussi la balise `<base>` de `404.html` (voir « Page 404 »)
 
 ## Sites d'exemple (accueil)
 
@@ -90,7 +91,7 @@ Les trois sites fictifs (Le Bistrot Parisien, Atelier Bois & Co, Maison Lumière
 | Fenêtre d'aperçu (modale) | Site complet, avec ordinateur / tablette / mobile | `<template data-site="…">` tout en bas de la page |
 
 - **Texte de la version détaillée** : modifiez le contenu du `<template>` correspondant.
-- **Nom, adresse, secteur et offre** : attributs du `<template>` (`data-name`, `data-url`, `data-sector`, `data-offer-label`). `data-offer` est l'offre présélectionnée dans le formulaire quand on clique sur « Demander un devis pour ce type de site » (`refonte`, `vitrine`, `premium` ou `ecommerce`).
+- **Nom, adresse, secteur et offre** : attributs du `<template>` (`data-name`, `data-url`, `data-sector`, `data-offer-label`). `data-offer` est l'offre présélectionnée dans le formulaire quand on clique sur « Demander un devis pour ce type de site » (lien vers `devis.html?offre=…`) (`refonte`, `vitrine`, `premium` ou `ecommerce`).
 - **Ordre et identifiants** : la valeur `data-site` (`bistrot`, `bois`, `lumiere`) doit être identique dans la vitrine, les sélecteurs, les cartes et le `<template>`.
 - **Couleurs et typographies** : `css/style.css`, section 18 (mockups du hero) et section 21 (sites détaillés : variables `--s-…` en tête de `.site--bistrot`, `.site--bois`, `.site--lumiere`).
 - **Interactions dans l'aperçu** (menu burger, filtres de l'atelier, chiffres animés, panier) : `js/showcase.js`, partie 5.
@@ -141,20 +142,28 @@ Section « En vidéo » (`id="video"` dans `index.html`).
 
 La vidéo ne démarre jamais seule, affiche les contrôles du navigateur et se met en pause quand elle sort de l'écran.
 
-## Formulaire de contact (Web3Forms)
+## Formulaires de contact et de devis (Web3Forms)
 
-Le formulaire de `contact.html` est **opérationnel** : les demandes arrivent sur **createch.design75@outlook.fr** (l'adresse liée à la clé Web3Forms).
+Deux pages, deux formulaires, **une seule logique** (`js/main.js`, partie 12) : le comportement dépend de l'attribut `data-form` du formulaire (`contact` ou `devis`), qui choisit la configuration (`FORM_CONFIGS` : sujet de l'email et message de succès). Validation, anti-spam et envoi sont communs. Les deux utilisent la même clé Web3Forms : les messages arrivent sur **createch.design75@outlook.fr**.
 
-- **Email reçu** : sujet « Nouvelle demande de contact — [offre choisie] — [nom] », expéditeur « Site Crea Tech Design ». Le champ `replyto` contient l'email du visiteur : « Répondre » dans Outlook lui écrit directement.
-- **Champs** : seuls le nom, l'email et le message sont obligatoires (entreprise, téléphone et offre sont facultatifs). Longueurs maximales : nom 100, entreprise 100, email 254, téléphone 20, message 3 000 caractères.
-- **Envoi** : en arrière-plan (fetch), aussi en local (`file://`). Si c'est impossible, le formulaire est envoyé de façon classique et Web3Forms renvoie vers `contact.html?envoi=ok` (champ caché `redirect`).
-- **Anti-spam** (dans `js/main.js`, partie 12) :
+| | `contact.html` (formulaire `data-form="contact"`) | `devis.html` (formulaire `data-form="devis"`) |
+|---|---|---|
+| Champs | nom, email, message (obligatoires), téléphone (facultatif), consentement RGPD | nom, email, description du projet (obligatoires), entreprise, téléphone, offre, abonnement Sérénité (facultatifs), consentement RGPD |
+| Sujet de l'email | « Nouveau message de contact — [nom] » | « Nouvelle demande de devis — [offre] — [nom] » |
+| Présélection | — | `devis.html?offre=premium`, `devis.html?abonnement=1` |
+| Retour après envoi classique | `contact.html?envoi=ok` | `devis.html?envoi=ok` |
+
+- **Email reçu** : expéditeur « Site Crea Tech Design ». Le champ `replyto` contient l'email du visiteur : « Répondre » dans Outlook lui écrit directement.
+- **Longueurs maximales** : nom 100, entreprise 100, email 254, téléphone 20, message 3 000 caractères.
+- **Envoi** : en arrière-plan (fetch), aussi en local (`file://`). Si c'est impossible, le formulaire est envoyé de façon classique et Web3Forms renvoie vers la page (champ caché `redirect`).
+- **Anti-spam** (commun aux deux formulaires) :
   - honeypot `botcheck` (case invisible pour les humains) ;
   - piège temporel : envoi refusé moins de 3 secondes après l'affichage de la page ;
   - bouton désactivé pendant l'envoi, puis bloqué 60 secondes après un envoi réussi ;
-  - 3 envois maximum par heure depuis un même navigateur (seules les heures d'envoi sont conservées, dans `localStorage`, clé `ctd-envois`) ;
+  - 3 envois maximum par heure depuis un même navigateur, tous formulaires confondus (seules les heures d'envoi sont conservées, dans `localStorage`, clé `ctd-envois`) ;
   - nettoyage des espaces, validation stricte de l'email et du téléphone, refus des messages contenant plus de 3 liens ;
   - message clair si Web3Forms refuse l'envoi (trop de requêtes, service indisponible).
+- **Ajouter un troisième formulaire** : copiez un formulaire existant, donnez-lui un `data-form` nouveau et ajoutez sa configuration dans `FORM_CONFIGS`.
 
 ## Accessibilité
 
@@ -163,7 +172,7 @@ Objectif : RGAA 4.1 / WCAG 2.1 niveau AA (déclaration : `accessibilite.html`, �
 - **Panneau « Accessibilité »** (bouton en bas à gauche, utilisable au clavier) : taille du texte (normale / grande / très grande), contraste renforcé, réduction des animations. Choix mémorisés dans `localStorage` (clé `ctd-a11y`) et appliqués dès le `<head>` par `js/a11y-init.js`, sans flash. Classes CSS : `a11y-text-lg`, `a11y-text-xl`, `a11y-contrast`, `a11y-reduce-motion` sur `<html>` (section 24 de `css/style.css`).
 - **Contrastes** vérifiés (texte ≥ 4,5:1, éléments graphiques ≥ 3:1), y compris les deux extrémités des textes en dégradé et les couleurs des sites d'exemple.
 - **Clavier** : lien « Aller au contenu » sur chaque page, focus visible, menu, vitrine, modale, cartes, FAQ, vidéo et formulaire utilisables au clavier.
-- **Structure** : un seul `h1` par page, titres hiérarchisés, `header` / `nav` / `main` / `footer`, `aria-current` sur la page active, liens externes signalés « (nouvelle fenêtre) ».
+- **Structure** : un seul `h1` par page, titres hiérarchisés, `header` / `nav` / `main` / `footer`, `aria-current` sur la page active (sur `devis.html`, c'est le bouton « Demander un devis » du header qui le porte), liens externes signalés « (nouvelle fenêtre) ».
 - **Formulaire** : étiquettes associées, champs obligatoires indiqués en texte, erreurs annoncées (`role="alert"` + `aria-describedby`).
 - **Zones tactiles** : au moins 44 × 44 px sur mobile.
 
@@ -183,7 +192,7 @@ Le bandeau conforme CNIL est prêt dans **`js/consent.js`** (« Tout accepter »
 ## Sécurité
 
 - **HTTPS** : GitHub Pages sert le site en HTTPS ; cochez **« Enforce HTTPS »** dans Settings > Pages. Tous les liens internes sont relatifs et tous les liens externes en `https://`.
-- **En-têtes** : GitHub Pages ne permet pas d'en-têtes HTTP personnalisés. Chaque page contient donc une balise `<meta http-equiv="Content-Security-Policy">` (uniquement nos fichiers + l'API Web3Forms) et `<meta name="referrer" content="strict-origin-when-cross-origin">`. **Si vous modifiez la CSP, modifiez-la dans les 11 pages.**
+- **En-têtes** : GitHub Pages ne permet pas d'en-têtes HTTP personnalisés. Chaque page contient donc une balise `<meta http-equiv="Content-Security-Policy">` (uniquement nos fichiers + l'API Web3Forms) et `<meta name="referrer" content="strict-origin-when-cross-origin">`. **Si vous modifiez la CSP, modifiez-la dans les 12 pages.**
 - **Anti-clickjacking** : `frame-ancestors` ne fonctionne pas en balise meta ; `js/main.js` masque la page si elle est affichée dans un cadre (iframe) d'un autre site et propose d'ouvrir le site directement.
 - **`.htaccess`** : conservé pour un futur hébergeur Apache (redirection HTTPS, HSTS, en-têtes de sécurité). Il n'est pas utilisé par GitHub Pages.
 - **Pas de JavaScript ni de style inline**, aucun script tiers ; liens `target="_blank"` en `rel="noopener noreferrer"`.

@@ -13,7 +13,7 @@
    10. Tarifs : cadre lumineux qui suit l'offre survolée
    11. FAQ : ouverture animée
    11 bis. Vidéo de présentation (accueil)
-   12. Formulaire de contact
+   12. Formulaires : contact (contact.html) et demande de devis (devis.html)
    (La vitrine du hero et sa modale sont dans js/showcase.js,
     les effets 3D de scroll, le curseur et le chargement dans js/effects-3d.js)
    ========================================================================== */
@@ -674,11 +674,28 @@
   initFaq();
   initVideo();
 
-  /* ---- 12. Formulaire de contact ---- */
-  var form = document.getElementById("contact-form");
+  /* ---- 12. Formulaires : contact (contact.html) et demande de devis (devis.html) ----
+     Une seule logique (validation, anti-spam, envoi Web3Forms) ; seule la configuration change,
+     selon l'attribut data-form du formulaire. */
+  var form = document.querySelector("form[data-form]");
   if (!form) return;
 
-  // Présélection de l'offre depuis l'URL : contact.html?offre=premium
+  var FORM_CONFIGS = {
+    contact: {
+      subject: function () { return "Nouveau message de contact — " + form.elements.nom.value; },
+      success: "Merci ! Votre message a bien été envoyé. Nous vous répondons sous 24 à 48 h ouvrées."
+    },
+    devis: {
+      subject: function () {
+        var offreLabel = select ? select.options[select.selectedIndex].text.replace(/\s*\(.*\)$/, "") : "Site";
+        return "Nouvelle demande de devis — " + offreLabel + " — " + form.elements.nom.value;
+      },
+      success: "Merci ! Votre demande de devis a bien été envoyée. Nous vous répondons sous 24 à 48 h ouvrées avec une proposition claire."
+    }
+  };
+  var config = FORM_CONFIGS[form.getAttribute("data-form")] || FORM_CONFIGS.contact;
+
+  // Devis : présélection de l'offre depuis l'URL (devis.html?offre=premium, devis.html?abonnement=1)
   var params = new URLSearchParams(window.location.search);
   var offre = params.get("offre");
   var select = form.querySelector("#offre");
@@ -694,7 +711,7 @@
   var submitBtn = form.querySelector('button[type="submit"]');
   var SUBMIT_LABEL = "Envoyer ma demande";
   var CONTACT_EMAIL = "createch.design75@outlook.fr";
-  var SUCCESS_TEXT = "Merci ! Votre demande a bien été envoyée. Nous vous répondons sous 24 à 48 h ouvrées.";
+  var SUCCESS_TEXT = config.success;
   var fallbackUsed = false;
 
   /* Anti-spam côté site (en plus du honeypot « botcheck » et des filtres de Web3Forms) :
@@ -809,7 +826,7 @@
     status.textContent = text;
   }
 
-  // Retour après un envoi classique (repli) : contact.html?envoi=ok
+  // Retour après un envoi classique (repli) : contact.html?envoi=ok ou devis.html?envoi=ok
   if (params.get("envoi") === "ok") showStatus("success", SUCCESS_TEXT);
 
   form.addEventListener("submit", function (e) {
@@ -848,13 +865,12 @@
     }
 
     // Sujet de l'email reçu et adresse de réponse (champs cachés : utilisés aussi par l'envoi classique)
-    var offreLabel = select ? select.options[select.selectedIndex].text.replace(/\s*\(.*\)$/, "") : "Site";
-    form.elements.subject.value = "Nouvelle demande de contact — " + offreLabel + " — " + form.elements.nom.value;
+    form.elements.subject.value = config.subject();
     form.elements.replyto.value = form.elements.email.value;
 
     var data = new FormData(form);
     data.delete("redirect");
-    data.set("abonnement", form.elements.abonnement && form.elements.abonnement.checked ? form.elements.abonnement.value : "Non");
+    if (form.elements.abonnement) data.set("abonnement", form.elements.abonnement.checked ? form.elements.abonnement.value : "Non");
 
     submitBtn.disabled = true;
     submitBtn.textContent = "Envoi en cours…";

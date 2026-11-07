@@ -194,7 +194,7 @@
     urlEl.textContent = site.url;
     countEl.textContent = (modalIndex + 1) + " / " + count;
     offerEl.textContent = site.offerLabel;
-    ctaEl.href = "contact.html?offre=" + encodeURIComponent(site.offer);
+    ctaEl.href = "devis.html?offre=" + encodeURIComponent(site.offer);
     liveEl.textContent = "Site " + (modalIndex + 1) + " sur " + count + " : " + site.name;
     if (items.length) setActive(modalIndex, false);
   }

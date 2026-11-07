@@ -6,16 +6,16 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact &amp; devis | Crea Tech Design</title>
-  <meta name="description" content="Contactez Crea Tech Design pour votre projet de site vitrine, site marchand ou refonte. Devis gratuit, réponse sous 24 à 48 h.">
+  <title>Contact | Crea Tech Design</title>
+  <meta name="description" content="Contactez Crea Tech Design : vos interlocuteurs, notre email, notre téléphone et un formulaire pour nous écrire. Réponse sous 24 à 48 h ouvrées.">
   <meta name="theme-color" content="#0B0B14">
   <link rel="canonical" href="https://mmm-svc.github.io/crea-tech-design-3/contact.html">
   <!-- Open Graph (aperçu lors d'un partage sur les réseaux) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:site_name" content="Crea Tech Design">
-  <meta property="og:title" content="Contact &amp; devis | Crea Tech Design">
-  <meta property="og:description" content="Contactez Crea Tech Design pour votre projet de site vitrine, site marchand ou refonte. Devis gratuit, réponse sous 24 à 48 h.">
+  <meta property="og:title" content="Contact | Crea Tech Design">
+  <meta property="og:description" content="Contactez Crea Tech Design : vos interlocuteurs, notre email, notre téléphone et un formulaire pour nous écrire. Réponse sous 24 à 48 h ouvrées.">
   <meta property="og:url" content="https://mmm-svc.github.io/crea-tech-design-3/contact.html">
   <meta property="og:image" content="https://mmm-svc.github.io/crea-tech-design-3/images/og-image.jpg">
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -40,9 +40,9 @@
           <li><a class="nav__link" href="index.html">Accueil</a></li>
           <li><a class="nav__link" href="services.html">Services &amp; tarifs</a></li>
           <li><a class="nav__link" href="a-propos.html">Qui sommes-nous ?</a></li>
-          <li><a class="nav__link" href="contact.html" aria-current="page">Contact &amp; devis</a></li>
+          <li><a class="nav__link" href="contact.html" aria-current="page">Contact</a></li>
         </ul>
-        <a class="btn btn--primary" href="contact.html">Demander un devis</a>
+        <a class="btn btn--primary" href="devis.html">Demander un devis</a>
       </nav>
     </div>
   </header>
@@ -51,9 +51,10 @@
 
     <section class="page-hero">
       <div class="container reveal">
-        <span class="eyebrow">Parlons de votre projet</span>
-        <h1>Contact &amp; <span class="text-gradient">devis</span></h1>
-        <p>Remplissez le formulaire : nous vous répondons sous 24 à 48 h ouvrées avec une proposition adaptée. Le devis est gratuit et sans engagement.</p>
+        <span class="eyebrow">Une question ?</span>
+        <h1><span class="text-gradient">Contact</span></h1>
+        <p>Une question, une remarque, un renseignement ? Écrivez-nous : nous vous répondons sous 24 à 48 h ouvrées.</p>
+        <p class="page-hero__link"><a class="link-arrow" href="devis.html">Vous avez un projet ? Demandez un devis gratuit</a></p>
       </div>
     </section>
 
@@ -62,13 +63,13 @@
 
         <!-- ===== FORMULAIRE ===== -->
         <div class="form-card reveal">
-          <h2 class="visually-hidden">Formulaire de contact et de demande de devis</h2>
-          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <h2 class="visually-hidden">Formulaire de contact</h2>
+          <form id="contact-form" data-form="contact" action="https://api.web3forms.com/submit" method="POST" novalidate>
             <!-- Web3Forms : les demandes arrivent sur createch.design75@outlook.fr (adresse liée à la clé, voir README.md) -->
             <input type="hidden" name="access_key" value="dffc5497-9365-4944-90e0-d0396a4f1e56">
             <input type="hidden" name="from_name" value="Site Crea Tech Design">
             <!-- Complétés par js/main.js avant l'envoi -->
-            <input type="hidden" name="subject" value="Nouvelle demande de contact — Site Crea Tech Design">
+            <input type="hidden" name="subject" value="Nouveau message de contact — Site Crea Tech Design">
             <input type="hidden" name="replyto" value="">
             <!-- Repli sans JavaScript : retour sur la page contact après l'envoi -->
             <input type="hidden" name="redirect" value="https://mmm-svc.github.io/crea-tech-design-3/contact.html?envoi=ok">
@@ -83,52 +84,31 @@
                 <span class="field__error" id="nom-error" role="alert"></span>
               </div>
               <div class="field">
-                <label for="entreprise">Entreprise <span class="opt">(facultatif)</span></label>
-                <input id="entreprise" name="entreprise" type="text" autocomplete="organization" maxlength="100" aria-describedby="entreprise-error">
-                <span class="field__error" id="entreprise-error" role="alert"></span>
-              </div>
-              <div class="field">
                 <label for="email">Email <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obligatoire)</span></label>
                 <input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby="email-error">
                 <span class="field__error" id="email-error" role="alert"></span>
               </div>
-              <div class="field">
+              <div class="field field--full">
                 <label for="telephone">Téléphone <span class="opt">(facultatif)</span></label>
                 <input id="telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" aria-describedby="telephone-error">
                 <span class="field__error" id="telephone-error" role="alert"></span>
               </div>
               <div class="field field--full">
-                <label for="offre">Offre souhaitée <span class="opt">(facultatif)</span></label>
-                <select id="offre" name="offre">
-                  <option value="refonte">Refonte de site (1 900 € HT)</option>
-                  <option value="vitrine">Site vitrine Classique (2 480 € HT)</option>
-                  <option value="premium">Site vitrine Premium (2 890 € HT)</option>
-                  <option value="ecommerce">Site marchand (sur devis, dès 3 000 € HT)</option>
-                  <option value="autre" selected>Autre / je ne sais pas encore</option>
-                </select>
-              </div>
-              <div class="field field--full">
-                <label class="check check--box">
-                  <input id="abonnement" name="abonnement" type="checkbox" value="Oui (+45 € HT/mois)">
-                  <span><strong>Ajouter l'abonnement Sérénité (+45 € HT/mois)</strong><br>Maintenance, hébergement et modifications illimitées.</span>
-                </label>
-              </div>
-              <div class="field field--full">
-                <label for="message">Votre projet <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obligatoire)</span></label>
-                <textarea id="message" name="message" placeholder="Décrivez votre activité, vos besoins, vos délais…" maxlength="3000" required aria-describedby="message-hint message-error"></textarea>
+                <label for="message">Votre message <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obligatoire)</span></label>
+                <textarea id="message" name="message" placeholder="Votre question ou votre message…" maxlength="3000" required aria-describedby="message-hint message-error"></textarea>
                 <span class="field__hint" id="message-hint">3 000 caractères maximum, 3 liens au plus.</span>
                 <span class="field__error" id="message-error" role="alert"></span>
               </div>
               <div class="field field--full">
                 <label class="check">
                   <input id="rgpd" name="rgpd" type="checkbox" required aria-describedby="rgpd-error">
-                  <span>J'accepte que mes données soient utilisées uniquement pour être recontacté au sujet de ma demande. <a href="confidentialite.html">Politique de confidentialité</a> <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obligatoire)</span></span>
+                  <span>J'accepte que mes données soient utilisées uniquement pour être recontacté au sujet de mon message. <a href="confidentialite.html">Politique de confidentialité</a> <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obligatoire)</span></span>
                 </label>
                 <span class="field__error" id="rgpd-error" role="alert"></span>
               </div>
               <div class="field field--full">
-                <button class="btn btn--primary btn--block" type="submit">Envoyer ma demande</button>
-                <p class="form-legal">Vos données servent uniquement à répondre à votre demande de contact ou de devis. Elles sont transmises à Crea Tech Design via notre prestataire Web3Forms, et conservées 3 ans maximum après notre dernier échange. Pour en savoir plus et exercer vos droits : <a href="confidentialite.html">politique de confidentialité</a>. Nos prestations sont soumises à nos <a href="cgv.html">CGV</a>.</p>
+                <button class="btn btn--primary btn--block" type="submit">Envoyer mon message</button>
+                <p class="form-legal">Vos données servent uniquement à répondre à votre message. Elles sont transmises à Crea Tech Design via notre prestataire Web3Forms, et conservées 3 ans maximum après notre dernier échange. Pour en savoir plus et exercer vos droits : <a href="confidentialite.html">politique de confidentialité</a>.</p>
               </div>
             </div>
             <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
@@ -199,7 +179,7 @@
             <li><a href="index.html">Accueil</a></li>
             <li><a href="services.html">Services &amp; tarifs</a></li>
             <li><a href="a-propos.html">Qui sommes-nous ?</a></li>
-            <li><a href="contact.html">Contact &amp; devis</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
         <div>

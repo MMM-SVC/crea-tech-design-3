@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <!-- Sécurité (GitHub Pages n'envoie pas d'en-têtes HTTP personnalisés : voir README, rubrique Sécurité) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; font-src 'self'; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demander un devis | Crea Tech Design</title>
+  <meta name="description" content="Demandez un devis gratuit et sans engagement pour votre site vitrine, site marchand ou refonte. Réponse sous 24 à 48 h ouvrées.">
+  <meta name="theme-color" content="#0B0B14">
+  <link rel="canonical" href="https://mmm-svc.github.io/crea-tech-design-3/devis.html">
+  <!-- Open Graph (aperçu lors d'un partage sur les réseaux) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Crea Tech Design">
+  <meta property="og:title" content="Demander un devis | Crea Tech Design">
+  <meta property="og:description" content="Demandez un devis gratuit et sans engagement pour votre site vitrine, site marchand ou refonte. Réponse sous 24 à 48 h ouvrées.">
+  <meta property="og:url" content="https://mmm-svc.github.io/crea-tech-design-3/devis.html">
+  <meta property="og:image" content="https://mmm-svc.github.io/crea-tech-design-3/images/og-image.jpg">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <script src="js/a11y-init.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head><body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Crea Tech Design — accueil">
+        <img src="images/logo-mark-light.png" alt="" width="52" height="29">
+        <span class="brand__name">CREA <span>TECH</span> DESIGN</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Accueil</a></li>
+          <li><a class="nav__link" href="services.html">Services &amp; tarifs</a></li>
+          <li><a class="nav__link" href="a-propos.html">Qui sommes-nous ?</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+        <a class="btn btn--primary" href="devis.html" aria-current="page">Demander un devis</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="page-hero">
+      <div class="container reveal">
+        <span class="eyebrow">Devis gratuit</span>
+        <h1>Demander un <span class="text-gradient">devis</span></h1>
+        <p>Décrivez-nous votre projet : nous vous répondons sous 24 à 48 h ouvrées avec une proposition claire. Le devis est gratuit et sans engagement.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container contact">
+
+        <!-- ===== FORMULAIRE ===== -->
+        <div class="form-card reveal">
+          <h2 class="visually-hidden">Formulaire de demande de devis</h2>
+          <form id="devis-form" data-form="devis" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <!-- Web3Forms : les demandes arrivent sur createch.design75@outlook.fr (adresse liée à la clé, voir README.md) -->
+            <input type="hidden" name="access_key" value="dffc5497-9365-4944-90e0-d0396a4f1e56">
+            <input type="hidden" name="from_name" value="Site Crea Tech Design">
+            <!-- Complétés par js/main.js avant l'envoi -->
+            <input type="hidden" name="subject" value="Nouvelle demande de devis — Site Crea Tech Design">
+            <input type="hidden" name="replyto" value="">
+            <!-- Repli sans JavaScript : retour sur la page devis après l'envoi -->
+            <input type="hidden" name="redirect" value="https://mmm-svc.github.io/crea-tech-design-3/devis.html?envoi=ok">
+            <!-- Anti-spam (honeypot) : champ invisible pour les humains -->
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <p class="form-required">Les champs marqués d'un astérisque (<span aria-hidden="true">*</span>) sont obligatoires.</p>
+            <div class="form-grid">
+              <div class="field">
+                <label for="nom">Nom et prénom <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obligatoire)</span></label>
+                <input id="nom" name="nom" type="text" autocomplete="name" maxlength="100" required aria-describedby="nom-error">
+                <span class="field__error" id="nom-error" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="entreprise">Entreprise <span class="opt">(facultatif)</span></label>
+                <input id="entreprise" name="entreprise" type="text" autocomplete="organization" maxlength="100" aria-describedby="entreprise-error">
+                <span class="field__error" id="entreprise-error" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="email">Email <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obligatoire)</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby="email-error">
+                <span class="field__error" id="email-error" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="telephone">Téléphone <span class="opt">(facultatif)</span></label>
+                <input id="telephone" name="telephone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" aria-describedby="telephone-error">
+                <span class="field__error" id="telephone-error" role="alert"></span>
+              </div>
+              <div class="field field--full">
+                <label for="offre">Offre souhaitée <span class="opt">(facultatif)</span></label>
+                <select id="offre" name="offre">
+                  <option value="refonte">Refonte de site (1 900 € HT)</option>
+                  <option value="vitrine">Site vitrine Classique (2 480 € HT)</option>
+                  <option value="premium">Site vitrine Premium (2 890 € HT)</option>
+                  <option value="ecommerce">Site marchand (sur devis, dès 3 000 € HT)</option>
+                  <option value="autre" selected>Autre / je ne sais pas encore</option>
+                </select>
+              </div>
+              <div class="field field--full">
+                <label class="check check--box">
+                  <input id="abonnement" name="abonnement" type="checkbox" value="Oui (+45 € HT/mois)">
+                  <span><strong>Ajouter l'abonnement Sérénité (+45 € HT/mois)</strong><br>Maintenance, hébergement et modifications illimitées.</span>
+                </label>
+              </div>
+              <div class="field field--full">
+                <label for="message">Votre projet <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obligatoire)</span></label>
+                <textarea id="message" name="message" placeholder="Décrivez votre activité, vos besoins, vos délais…" maxlength="3000" required aria-describedby="message-hint message-error"></textarea>
+                <span class="field__hint" id="message-hint">3 000 caractères maximum, 3 liens au plus.</span>
+                <span class="field__error" id="message-error" role="alert"></span>
+              </div>
+              <div class="field field--full">
+                <label class="check">
+                  <input id="rgpd" name="rgpd" type="checkbox" required aria-describedby="rgpd-error">
+                  <span>J'accepte que mes données soient utilisées uniquement pour être recontacté au sujet de ma demande. <a href="confidentialite.html">Politique de confidentialité</a> <span class="req" aria-hidden="true">*</span><span class="visually-hidden">(obligatoire)</span></span>
+                </label>
+                <span class="field__error" id="rgpd-error" role="alert"></span>
+              </div>
+              <div class="field field--full">
+                <button class="btn btn--primary btn--block" type="submit">Envoyer ma demande de devis</button>
+                <p class="form-legal">Vos données servent uniquement à répondre à votre demande de devis. Elles sont transmises à Crea Tech Design via notre prestataire Web3Forms, et conservées 3 ans maximum après notre dernier échange. Pour en savoir plus et exercer vos droits : <a href="confidentialite.html">politique de confidentialité</a>. Nos prestations sont soumises à nos <a href="cgv.html">CGV</a>.</p>
+              </div>
+            </div>
+            <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <!-- ===== RÉCAPITULATIF (sans prénoms) ===== -->
+        <aside class="contact-aside quote-aside reveal" aria-labelledby="quote-steps-title">
+          <div class="quote-steps">
+            <h2 class="contact-aside__title" id="quote-steps-title">Comment ça se passe ?</h2>
+            <ol>
+              <li><b>Vous décrivez votre projet</b><span>Quelques lignes suffisent : votre activité, vos besoins, vos délais.</span></li>
+              <li><b>Nous vous répondons sous 24 à 48 h</b><span>Par email ou par téléphone, pour préciser ce qui compte pour vous.</span></li>
+              <li><b>Vous recevez un devis clair</b><span>Gratuit, sans engagement, avec des prix hors taxes détaillés.</span></li>
+            </ol>
+          </div>
+          <a class="contact-item" href="mailto:createch.design75@outlook.fr">
+            <span class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
+            <span><small>Email</small><strong>createch.design75@outlook.fr</strong></span>
+          </a>
+          <a class="contact-item" href="tel:+33768341805">
+            <span class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <span><small>Téléphone</small><strong>07 68 34 18 05</strong></span>
+          </a>
+          <p class="quote-aside__more">Une simple question ? <a href="contact.html">Écrivez-nous depuis la page Contact</a></p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="Crea Tech Design — accueil">
+            <img src="images/logo-mark-light.png" alt="" width="52" height="29">
+            <span class="brand__name">CREA <span>TECH</span> DESIGN</span>
+          </a>
+          <p>Création de sites vitrines, sites marchands et refontes pour les PME. Le design et la cybersécurité réunis pour votre visibilité en ligne.</p>
+        </div>
+        <nav aria-labelledby="footer-nav-title">
+          <h2 id="footer-nav-title">Navigation</h2>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services &amp; tarifs</a></li>
+            <li><a href="a-propos.html">Qui sommes-nous ?</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2>Nos offres</h2>
+          <ul>
+            <li><a href="services.html#refonte">Refonte de site</a></li>
+            <li><a href="services.html#vitrine">Site vitrine</a></li>
+            <li><a href="services.html#ecommerce">Site marchand</a></li>
+            <li><a href="services.html#abonnement">Abonnement mensuel</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:createch.design75@outlook.fr">createch.design75@outlook.fr</a></li>
+            <li><a href="tel:+33768341805">07 68 34 18 05</a></li>
+            <li>Paris &amp; Île-de-France</li>
+          </ul>
+        </div>
+        <nav aria-labelledby="footer-legal-title">
+          <h2 id="footer-legal-title">Informations légales</h2>
+          <ul>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="cgv.html">CGV</a></li>
+            <li><a href="cgu.html">CGU</a></li>
+            <li><a href="confidentialite.html">Confidentialité</a></li>
+            <li><a href="cookies.html">Cookies</a></li>
+            <li><a href="accessibilite.html">Accessibilité</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <!-- Numéros FICTIFS (maquette interne) : à remplacer par les vrais avant toute publication -->
+        <p>© <span data-year>2026</span> Crea Tech Design — SARL au capital de 10 000 € — SIRET 924 581 376 00018</p>
+        <p>Ce site n'utilise aucun cookie de suivi. <a href="cookies.html">En savoir plus sur les cookies</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/a11y.js"></script>
+  <script src="js/effects-3d.js"></script>
+</body>
+</html>
